@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Name — Game Designer, Coder &amp; Animator</title>
-<meta name="description" content="Portfolio of Your Name: game design, programming, and animation work.">
+<title>Projects — Your Name</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -556,103 +555,138 @@ p { margin: 0 0 1em; color: var(--ink); }
   </nav>
 </header>
 
+<!-- QUICK JUMP LINKS — add one per project section below -->
+<nav class="jump-links" aria-label="Jump to project">
+  <a href="#project-one">Project One</a>
+  <a href="#project-two">Project Two</a>
+  <a href="#project-three">Project Three</a>
+  <!-- <a href="#project-four">Project Four</a> -->
+</nav>
+
 <main>
 
-  <!-- HERO -->
-  <section class="hero container">
-    <div class="hero-grid">
-      <div>
-        <p class="eyebrow">Portfolio — 2026</p>
-        <h1>Your Name</h1>
-        <div class="role-tags">
-          <span>Game Designer</span>
-          <span>Programmer</span>
-          <span>Animator / Artist</span>
-        </div>
-        <p class="muted">
-          One or two sentences about who you are and what you make — e.g. "I design
-          and build small, systems-driven games, then hand-animate the worlds they
-          run in." Replace this with your real bio; keep it to 2–3 sentences so the
-          hero stays fast to read.
-        </p>
-        <div class="hero-actions">
-          <a href="projects.html" class="btn btn-accent">View Projects</a>
-          <a href="cv.html" class="btn">View CV</a>
-          <a href="contact.html" class="btn">Get in Touch</a>
+  <section class="container" style="padding-top: clamp(40px,6vw,64px);">
+    <p class="eyebrow">Projects</p>
+    <h1 style="font-size:clamp(2rem,4vw,2.8rem); max-width:20ch;">Games, tools, and animation work.</h1>
+    <p class="muted" style="max-width:60ch;">Jump straight to a project with the links above, or scroll through everything below. Playable builds run right on the page; art/animation pieces show video or image reels instead.</p>
+  </section>
+
+  <!-- =====================================================================
+       PROJECT ONE — playable
+       ===================================================================== -->
+  <section id="project-one" class="project-block container">
+    <p class="eyebrow">01 — Playable</p>
+    <h2>Project One Title</h2>
+    <div class="project-meta">
+      <span>Role: Design + Programming</span>
+      <span>Engine: Unity</span>
+      <span>Year: 2025</span>
+    </div>
+    <p class="muted" style="max-width:70ch;">
+      One short paragraph on the project: what it is, the core mechanic or hook,
+      and what you were responsible for. Keep it tight — two or three sentences.
+    </p>
+
+    <div class="frame" style="margin-top:24px;">
+      <span class="fr fr-tl"></span><span class="fr fr-tr"></span>
+      <span class="fr fr-bl"></span><span class="fr fr-br"></span>
+      <span class="frame-label">Playable Build</span>
+      <div class="embed-wrap">
+        <!--
+          Swap the placeholder below for a real WebGL/HTML5 build embed, e.g.:
+          <iframe src="https://itch.io/embed-upload/XXXXXXX?color=333333"
+                  allowfullscreen loading="lazy" title="Project One playable build"></iframe>
+          — or self-host a Unity WebGL export in assets/games/project-one/ and
+          point src at assets/games/project-one/index.html
+        -->
+        <div class="embed-placeholder">
+          <span>▶ Playable build goes here</span>
+          <span>Swap &lt;div class="embed-placeholder"&gt; for an &lt;iframe&gt; pointing at your itch.io embed or self-hosted WebGL build.</span>
         </div>
       </div>
+    </div>
 
-      <div class="frame">
-        <span class="fr fr-tl"></span><span class="fr fr-tr"></span>
-        <span class="fr fr-bl"></span><span class="fr fr-br"></span>
-        <span class="frame-label">Portrait</span>
-        <div class="portrait-frame">
-          <!-- Swap this div for: <img src="assets/img/portrait.jpg" alt="Your Name"> -->
-          <p class="portrait-placeholder">Portrait or self-drawn<br>character goes here<br>(assets/img/portrait.jpg)</p>
+    <div class="project-links">
+      <a href="#" class="btn btn-accent">Play on itch.io ↗</a>
+      <a href="#" class="btn">Source ↗</a>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       PROJECT TWO — playable
+       ===================================================================== -->
+  <section id="project-two" class="project-block container">
+    <p class="eyebrow">02 — Playable</p>
+    <h2>Project Two Title</h2>
+    <div class="project-meta">
+      <span>Role: Programming</span>
+      <span>Engine: Godot</span>
+      <span>Year: 2024</span>
+    </div>
+    <p class="muted" style="max-width:70ch;">
+      Short paragraph describing the project, your role, and the standout feature.
+    </p>
+
+    <div class="frame" style="margin-top:24px;">
+      <span class="fr fr-tl"></span><span class="fr fr-tr"></span>
+      <span class="fr fr-bl"></span><span class="fr fr-br"></span>
+      <span class="frame-label">Playable Build</span>
+      <div class="embed-wrap">
+        <div class="embed-placeholder">
+          <span>▶ Playable build goes here</span>
+          <span>Same pattern as Project One — replace with an iframe embed.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-links">
+      <a href="#" class="btn btn-accent">Play on itch.io ↗</a>
+      <a href="#" class="btn">Source ↗</a>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       PROJECT THREE — art / animation, non-playable
+       ===================================================================== -->
+  <section id="project-three" class="project-block container">
+    <p class="eyebrow">03 — Animation</p>
+    <h2>Project Three Title</h2>
+    <div class="project-meta">
+      <span>Role: Animation</span>
+      <span>Tools: Procreate, After Effects</span>
+      <span>Year: 2024</span>
+    </div>
+    <p class="muted" style="max-width:70ch;">
+      Short paragraph on this piece — the brief, the style, what it was for.
+    </p>
+
+    <div class="frame" style="margin-top:24px;">
+      <span class="fr fr-tl"></span><span class="fr fr-tr"></span>
+      <span class="fr fr-bl"></span><span class="fr fr-br"></span>
+      <span class="frame-label">Reel</span>
+      <div class="embed-wrap">
+        <!--
+          For non-playable pieces, embed a video instead of an iframe game build:
+          <video src="assets/games/project-three/reel.mp4" controls poster="assets/img/project-three-poster.jpg"></video>
+          or an <img> for a single still.
+        -->
+        <div class="embed-placeholder">
+          <span>🎞 Video reel or image goes here</span>
+          <span>Swap for a &lt;video&gt; or &lt;img&gt; tag.</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT / DISCIPLINES -->
-  <section class="section container">
-    <div class="section-head">
-      <h2>What I do</h2>
-      <p class="muted" style="max-width:32ch;">Three crafts, one practice — replace with your own framing.</p>
-    </div>
-    <div class="grid-3">
-      <div class="card">
-        <p class="eyebrow">Design</p>
-        <h3>Game Design</h3>
-        <p class="muted">Short description of your design focus — systems, level design, narrative, whatever's true. 2 lines max.</p>
-      </div>
-      <div class="card">
-        <p class="eyebrow">Build</p>
-        <h3>Programming</h3>
-        <p class="muted">Engines, languages, and tools you work in — e.g. Unity/C#, Godot/GDScript, custom tooling.</p>
-      </div>
-      <div class="card">
-        <p class="eyebrow">Craft</p>
-        <h3>Animation &amp; Art</h3>
-        <p class="muted">Your animation style and tools — e.g. hand-drawn frame-by-frame, rigged 2D, pixel art.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURED WORK TEASER -->
-  <section class="section container">
-    <div class="section-head">
-      <h2>Selected work</h2>
-      <a href="projects.html" class="text-link">All projects →</a>
-    </div>
-    <div class="grid-3">
-      <div class="card">
-        <p class="eyebrow">Playable</p>
-        <h3>Project One</h3>
-        <p class="muted">One-line hook for the project.</p>
-        <a href="projects.html#project-one" class="text-link">See project →</a>
-      </div>
-      <div class="card">
-        <p class="eyebrow">Playable</p>
-        <h3>Project Two</h3>
-        <p class="muted">One-line hook for the project.</p>
-        <a href="projects.html#project-two" class="text-link">See project →</a>
-      </div>
-      <div class="card">
-        <p class="eyebrow">Art / Animation</p>
-        <h3>Project Three</h3>
-        <p class="muted">One-line hook for the project.</p>
-        <a href="projects.html#project-three" class="text-link">See project →</a>
-      </div>
-    </div>
-  </section>
+  <!-- Duplicate a project-block section above for each additional game/piece,
+       and add a matching link in the .jump-links nav near the top. -->
 
 </main>
 
 <footer class="site-footer">
   <div class="container">
     <span>© 2026 Your Name</span>
-    <span>Built with plain HTML/CSS/JS · Hosted on GitHub Pages</span>
+    <span><a href="index.html" class="text-link">Back to top</a></span>
   </div>
 </footer>
 

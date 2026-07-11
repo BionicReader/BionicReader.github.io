@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Name — Game Designer, Coder &amp; Animator</title>
-<meta name="description" content="Portfolio of Your Name: game design, programming, and animation work.">
+<title>CV — Your Name</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -558,91 +557,79 @@ p { margin: 0 0 1em; color: var(--ink); }
 
 <main>
 
-  <!-- HERO -->
-  <section class="hero container">
-    <div class="hero-grid">
+  <section class="container" style="padding-top: clamp(40px,6vw,64px);">
+    <div class="section-head">
       <div>
-        <p class="eyebrow">Portfolio — 2026</p>
-        <h1>Your Name</h1>
-        <div class="role-tags">
-          <span>Game Designer</span>
-          <span>Programmer</span>
-          <span>Animator / Artist</span>
-        </div>
-        <p class="muted">
-          One or two sentences about who you are and what you make — e.g. "I design
-          and build small, systems-driven games, then hand-animate the worlds they
-          run in." Replace this with your real bio; keep it to 2–3 sentences so the
-          hero stays fast to read.
-        </p>
-        <div class="hero-actions">
-          <a href="projects.html" class="btn btn-accent">View Projects</a>
-          <a href="cv.html" class="btn">View CV</a>
-          <a href="contact.html" class="btn">Get in Touch</a>
+        <p class="eyebrow">CV</p>
+        <h1 style="font-size:clamp(2rem,4vw,2.8rem);">Your Name</h1>
+      </div>
+      <!-- Put a real PDF at assets/cv/your-name-cv.pdf -->
+      <a href="assets/cv/your-name-cv.pdf" class="btn btn-accent" download>Download PDF ↓</a>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section container">
+    <h2>Experience</h2>
+
+    <div class="cv-row">
+      <div class="cv-date">2024 — Now</div>
+      <div>
+        <h3 style="font-size:1.05rem; margin-bottom:4px;">Job Title, Studio / Company Name</h3>
+        <p class="muted">One or two lines on what you did there and what shipped.</p>
+      </div>
+    </div>
+
+    <div class="cv-row">
+      <div class="cv-date">2022 — 2024</div>
+      <div>
+        <h3 style="font-size:1.05rem; margin-bottom:4px;">Job Title, Studio / Company Name</h3>
+        <p class="muted">One or two lines on what you did there and what shipped.</p>
+      </div>
+    </div>
+
+    <div class="cv-row">
+      <div class="cv-date">2021 — 2022</div>
+      <div>
+        <h3 style="font-size:1.05rem; margin-bottom:4px;">Job Title, Studio / Company Name</h3>
+        <p class="muted">One or two lines on what you did there and what shipped.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section container">
+    <h2>Skills &amp; Tools</h2>
+    <div class="grid-3">
+      <div>
+        <p class="eyebrow" style="margin-bottom:10px;">Design</p>
+        <div class="skills-list">
+          <span>Systems Design</span><span>Level Design</span><span>Prototyping</span>
         </div>
       </div>
-
-      <div class="frame">
-        <span class="fr fr-tl"></span><span class="fr fr-tr"></span>
-        <span class="fr fr-bl"></span><span class="fr fr-br"></span>
-        <span class="frame-label">Portrait</span>
-        <div class="portrait-frame">
-          <!-- Swap this div for: <img src="assets/img/portrait.jpg" alt="Your Name"> -->
-          <p class="portrait-placeholder">Portrait or self-drawn<br>character goes here<br>(assets/img/portrait.jpg)</p>
+      <div>
+        <p class="eyebrow" style="margin-bottom:10px;">Programming</p>
+        <div class="skills-list">
+          <span>C#</span><span>Unity</span><span>Godot</span><span>Git</span>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:10px;">Art / Animation</p>
+        <div class="skills-list">
+          <span>2D Animation</span><span>Procreate</span><span>After Effects</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT / DISCIPLINES -->
+  <!-- EDUCATION -->
   <section class="section container">
-    <div class="section-head">
-      <h2>What I do</h2>
-      <p class="muted" style="max-width:32ch;">Three crafts, one practice — replace with your own framing.</p>
-    </div>
-    <div class="grid-3">
-      <div class="card">
-        <p class="eyebrow">Design</p>
-        <h3>Game Design</h3>
-        <p class="muted">Short description of your design focus — systems, level design, narrative, whatever's true. 2 lines max.</p>
-      </div>
-      <div class="card">
-        <p class="eyebrow">Build</p>
-        <h3>Programming</h3>
-        <p class="muted">Engines, languages, and tools you work in — e.g. Unity/C#, Godot/GDScript, custom tooling.</p>
-      </div>
-      <div class="card">
-        <p class="eyebrow">Craft</p>
-        <h3>Animation &amp; Art</h3>
-        <p class="muted">Your animation style and tools — e.g. hand-drawn frame-by-frame, rigged 2D, pixel art.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURED WORK TEASER -->
-  <section class="section container">
-    <div class="section-head">
-      <h2>Selected work</h2>
-      <a href="projects.html" class="text-link">All projects →</a>
-    </div>
-    <div class="grid-3">
-      <div class="card">
-        <p class="eyebrow">Playable</p>
-        <h3>Project One</h3>
-        <p class="muted">One-line hook for the project.</p>
-        <a href="projects.html#project-one" class="text-link">See project →</a>
-      </div>
-      <div class="card">
-        <p class="eyebrow">Playable</p>
-        <h3>Project Two</h3>
-        <p class="muted">One-line hook for the project.</p>
-        <a href="projects.html#project-two" class="text-link">See project →</a>
-      </div>
-      <div class="card">
-        <p class="eyebrow">Art / Animation</p>
-        <h3>Project Three</h3>
-        <p class="muted">One-line hook for the project.</p>
-        <a href="projects.html#project-three" class="text-link">See project →</a>
+    <h2>Education</h2>
+    <div class="cv-row">
+      <div class="cv-date">2018 — 2021</div>
+      <div>
+        <h3 style="font-size:1.05rem; margin-bottom:4px;">Degree Name, Institution</h3>
+        <p class="muted">Relevant detail — honours, thesis topic, etc. (optional)</p>
       </div>
     </div>
   </section>
@@ -652,7 +639,7 @@ p { margin: 0 0 1em; color: var(--ink); }
 <footer class="site-footer">
   <div class="container">
     <span>© 2026 Your Name</span>
-    <span>Built with plain HTML/CSS/JS · Hosted on GitHub Pages</span>
+    <span><a href="index.html" class="text-link">Back to top</a></span>
   </div>
 </footer>
 
