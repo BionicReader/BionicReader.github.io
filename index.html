@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Name — Game Designer, Coder &amp; Animator</title>
-<meta name="description" content="Portfolio of Your Name: game design, programming, and animation work.">
+<title>Evie Melhuish — Game Designer, Programmer &amp; Animator</title>
+<meta name="description" content="Portfolio of Evie Melhuish: game design, programming, and 3D/2D animation work, including the solo VR horror project Darker.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -20,15 +20,21 @@
    ========================================================================== */
 
 :root {
-  --bg: #FAFAF9;
-  --bg-alt: #F1F1F0;
-  --ink: #14161A;
-  --ink-muted: #63666D;
-  --ink-faint: #9A9CA2;
-  --accent: #2F5DFF;
-  --accent-soft: #E9EDFF;
-  --border: #E1E2E4;
-  --border-strong: #C7C9CD;
+  /* Palette pulled from Evie's reference swatches: warm lamplight yellow and
+     amber sitting above a run of cool teals into near-black navy — reads like
+     a flashlight beam in the dark, which suits a horror/VR-leaning games
+     portfolio without tipping the whole site into "dark mode". */
+  --bg: #FAF8F2;
+  --bg-alt: #F1EDE1;
+  --ink: #1C262B;
+  --ink-muted: #56656C;
+  --ink-faint: #96A2A6;
+  --accent: #4A9AA0;
+  --accent-warm: #D89138;
+  --accent-soft: #E4EFEE;
+  --accent-warm-soft: #F7E7CE;
+  --border: #E4DFCF;
+  --border-strong: #C7C0AC;
 
   --font-display: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
   --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
@@ -82,6 +88,17 @@ p { margin: 0 0 1em; color: var(--ink); }
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.eyebrow::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-warm);
+  flex-shrink: 0;
 }
 
 .container {
@@ -120,7 +137,19 @@ p { margin: 0 0 1em; color: var(--ink); }
   letter-spacing: -0.01em;
 }
 
-.nav-name .dot { color: var(--accent); }
+.nav-name .dot { color: var(--accent-warm); }
+
+.nickname-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--accent-warm);
+  border: 1.5px solid var(--accent-warm);
+  border-radius: 999px;
+  padding: 3px 10px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
 
 .nav-links {
   display: flex;
@@ -187,15 +216,30 @@ p { margin: 0 0 1em; color: var(--ink); }
 
 .fr {
   position: absolute;
-  width: 18px;
-  height: 18px;
-  border: 2px solid var(--accent);
+  width: 26px;
+  height: 26px;
+  border: 3px solid var(--accent);
   pointer-events: none;
 }
-.fr-tl { top: -1px; left: -1px; border-right: none; border-bottom: none; }
-.fr-tr { top: -1px; right: -1px; border-left: none; border-bottom: none; }
-.fr-bl { bottom: -1px; left: -1px; border-right: none; border-top: none; }
-.fr-br { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+.fr-tl { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+.fr-tr { top: -2px; right: -2px; border-left: none; border-bottom: none; }
+.fr-bl { bottom: -2px; left: -2px; border-right: none; border-top: none; }
+.fr-br { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+/* Rivet dots — a small circle sitting right on each corner, the frame's
+   one deliberate square/circle mashup rather than pure right angles. */
+.fr::after {
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent-warm);
+}
+.fr-tl::after { top: -2px; left: -2px; }
+.fr-tr::after { top: -2px; right: -2px; }
+.fr-bl::after { bottom: -2px; left: -2px; }
+.fr-br::after { bottom: -2px; right: -2px; }
 
 .frame-label {
   position: absolute;
@@ -232,10 +276,11 @@ p { margin: 0 0 1em; color: var(--ink); }
 .btn:hover { background: var(--ink); color: var(--bg); }
 
 .btn-accent {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--accent-warm);
+  background: var(--accent-warm);
+  color: #fff;
 }
-.btn-accent:hover { background: var(--accent); color: #fff; }
+.btn-accent:hover { background: #fff; color: var(--accent-warm); }
 
 .text-link {
   color: var(--accent);
@@ -279,9 +324,15 @@ p { margin: 0 0 1em; color: var(--ink); }
 }
 
 .role-tags span {
-  border: 1px solid var(--border-strong);
-  padding: 5px 10px;
-  color: var(--ink-muted);
+  border: 1.5px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--ink);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+.role-tags span:nth-child(2n) {
+  border-color: var(--accent-warm);
+  background: var(--accent-warm-soft);
 }
 
 .hero-actions {
@@ -314,8 +365,20 @@ p { margin: 0 0 1em; color: var(--ink); }
 /* ---------------------------------------------------------------------- */
 
 .section {
+  position: relative;
   padding: clamp(48px, 7vw, 88px) 0;
   border-top: 1px solid var(--border);
+}
+.section::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: var(--gutter);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
 }
 
 .section-head {
@@ -336,7 +399,7 @@ p { margin: 0 0 1em; color: var(--ink); }
 @media (max-width: 620px) { .grid-3 { grid-template-columns: 1fr; } }
 
 .card {
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   padding: 22px;
   transition: border-color 0.15s ease;
 }
@@ -367,8 +430,9 @@ p { margin: 0 0 1em; color: var(--ink); }
   letter-spacing: 0.04em;
   text-decoration: none;
   color: var(--ink-muted);
-  border: 1px solid var(--border-strong);
-  padding: 6px 12px;
+  border: 2px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 6px 14px;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 .jump-links a:hover { color: var(--accent); border-color: var(--accent); }
@@ -388,7 +452,7 @@ p { margin: 0 0 1em; color: var(--ink); }
   font-size: 0.75rem;
   color: var(--ink-muted);
 }
-.project-meta span { border: 1px solid var(--border); padding: 4px 9px; }
+.project-meta span { border: 1.5px solid var(--border-strong); border-radius: 999px; padding: 4px 11px; }
 
 .embed-wrap {
   position: relative;
@@ -426,6 +490,74 @@ p { margin: 0 0 1em; color: var(--ink); }
   flex-wrap: wrap;
 }
 
+/* Secondary stills — deliberately plain (hairline border only, no corner
+   brackets) so the .frame motif stays reserved for the one hero shot per
+   project rather than being diluted across every thumbnail. */
+.still-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+.still-grid figure { margin: 0; }
+.still-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  display: block;
+}
+.still-grid figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-top: 6px;
+}
+
+/* A wide, uncropped strip for banner-shaped assets like sprite sheets */
+.sprite-strip {
+  width: 100%;
+  border: 2px solid var(--border);
+  background: var(--bg-alt);
+  padding: 10px;
+  margin-top: 16px;
+}
+.sprite-strip img { width: 100%; height: auto; display: block; }
+
+/* Circular gallery — a deliberate break from the frame's right angles,
+   used on the homepage to pull in shots from across every project. */
+.circle-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(16px, 3vw, 28px);
+  justify-content: flex-start;
+}
+.circle-gallery a { text-decoration: none; }
+.circle-gallery figure {
+  margin: 0;
+  width: clamp(96px, 14vw, 140px);
+  text-align: center;
+}
+.circle-gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  display: block;
+}
+.circle-gallery figure:nth-child(2n) img { border-color: var(--accent-warm); }
+.circle-gallery figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-top: 10px;
+}
+
 /* ---------------------------------------------------------------------- */
 /* CV PAGE                                                                  */
 /* ---------------------------------------------------------------------- */
@@ -435,9 +567,9 @@ p { margin: 0 0 1em; color: var(--ink); }
   grid-template-columns: 140px 1fr;
   gap: 18px;
   padding: 18px 0;
-  border-top: 1px solid var(--border);
+  border-top: 2px solid var(--border);
 }
-.cv-row:last-child { border-bottom: 1px solid var(--border); }
+.cv-row:last-child { border-bottom: 2px solid var(--border); }
 
 .cv-date {
   font-family: var(--font-mono);
@@ -457,8 +589,9 @@ p { margin: 0 0 1em; color: var(--ink); }
 .skills-list span {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  border: 1px solid var(--border-strong);
-  padding: 5px 10px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 5px 12px;
 }
 
 /* ---------------------------------------------------------------------- */
@@ -469,7 +602,7 @@ p { margin: 0 0 1em; color: var(--ink); }
   position: relative;
   margin-left: 6px;
   padding-left: 34px;
-  border-left: 1px solid var(--border);
+  border-left: 2px solid var(--border);
 }
 
 .timeline-item {
@@ -481,12 +614,16 @@ p { margin: 0 0 1em; color: var(--ink); }
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -39px;
-  top: 4px;
-  width: 10px;
-  height: 10px;
+  left: -43px;
+  top: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
   background: var(--bg);
-  border: 2px solid var(--accent);
+  border: 3px solid var(--accent);
+}
+.timeline-item:nth-child(2n)::before {
+  border-color: var(--accent-warm);
 }
 
 .timeline-year {
@@ -508,7 +645,7 @@ p { margin: 0 0 1em; color: var(--ink); }
 }
 
 .contact-card {
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   padding: 22px;
   text-decoration: none;
   display: block;
@@ -544,7 +681,7 @@ p { margin: 0 0 1em; color: var(--ink); }
 
 <header class="site-header">
   <nav class="nav">
-    <a href="index.html" class="nav-name">Your Name<span class="dot">.</span></a>
+    <a href="index.html" class="nav-name">Evie Melhuish<span class="dot">.</span><span class="nickname-badge">aka BIRE</span></a>
     <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -562,18 +699,22 @@ p { margin: 0 0 1em; color: var(--ink); }
   <section class="hero container">
     <div class="hero-grid">
       <div>
-        <p class="eyebrow">Portfolio — 2026</p>
-        <h1>Your Name</h1>
+        <p class="eyebrow">Portfolio — 2023–2025</p>
+        <h1>Evie Melhuish</h1>
         <div class="role-tags">
           <span>Game Designer</span>
           <span>Programmer</span>
-          <span>Animator / Artist</span>
+          <span>3D / 2D Animator</span>
         </div>
         <p class="muted">
-          One or two sentences about who you are and what you make — e.g. "I design
-          and build small, systems-driven games, then hand-animate the worlds they
-          run in." Replace this with your real bio; keep it to 2–3 sentences so the
-          hero stays fast to read.
+          I build games from the ground up — systems, code, and the art and
+          animation that bring them to life. My solo capstone project, a
+          psychological VR horror experience called <em>Darker</em>, took me from
+          first-time Unreal Engine user to shipping a full narrative build in
+          13 weeks. I'm currently completing a Graduate Diploma in Digital
+          Innovation at Victoria University of Wellington, sharpening my
+          animation and game design theory further. I release my games under
+          the name <strong>BIRE</strong> — short for Bionic Reader.
         </p>
         <div class="hero-actions">
           <a href="projects.html" class="btn btn-accent">View Projects</a>
@@ -587,8 +728,9 @@ p { margin: 0 0 1em; color: var(--ink); }
         <span class="fr fr-bl"></span><span class="fr fr-br"></span>
         <span class="frame-label">Portrait</span>
         <div class="portrait-frame">
-          <!-- Swap this div for: <img src="assets/img/portrait.jpg" alt="Your Name"> -->
-          <p class="portrait-placeholder">Portrait or self-drawn<br>character goes here<br>(assets/img/portrait.jpg)</p>
+          <!-- Add your headshot to assets/img/portrait.jpg, then replace this div with:
+               <img src="assets/img/portrait.jpg" alt="Evie Melhuish"> -->
+          <p class="portrait-placeholder">Add portrait to<br>assets/img/portrait.jpg</p>
         </div>
       </div>
     </div>
@@ -598,23 +740,23 @@ p { margin: 0 0 1em; color: var(--ink); }
   <section class="section container">
     <div class="section-head">
       <h2>What I do</h2>
-      <p class="muted" style="max-width:32ch;">Three crafts, one practice — replace with your own framing.</p>
+      <p class="muted" style="max-width:32ch;">Three crafts feeding one practice.</p>
     </div>
     <div class="grid-3">
       <div class="card">
         <p class="eyebrow">Design</p>
         <h3>Game Design</h3>
-        <p class="muted">Short description of your design focus — systems, level design, narrative, whatever's true. 2 lines max.</p>
+        <p class="muted">Narrative-driven systems and level design — from a solo VR horror narrative to fast, scoped game-jam concepts.</p>
       </div>
       <div class="card">
         <p class="eyebrow">Build</p>
         <h3>Programming</h3>
-        <p class="muted">Engines, languages, and tools you work in — e.g. Unity/C#, Godot/GDScript, custom tooling.</p>
+        <p class="muted">Unreal Engine (C++, Blueprints), Godot (GDScript), and Processing — gameplay systems, UI, and interaction frameworks.</p>
       </div>
       <div class="card">
         <p class="eyebrow">Craft</p>
         <h3>Animation &amp; Art</h3>
-        <p class="muted">Your animation style and tools — e.g. hand-drawn frame-by-frame, rigged 2D, pixel art.</p>
+        <p class="muted">3D modeling and rigging in Blender through to 2D pixel art and sprite work — full pipeline from concept to game-ready asset.</p>
       </div>
     </div>
   </section>
@@ -627,23 +769,63 @@ p { margin: 0 0 1em; color: var(--ink); }
     </div>
     <div class="grid-3">
       <div class="card">
-        <p class="eyebrow">Playable</p>
-        <h3>Project One</h3>
-        <p class="muted">One-line hook for the project.</p>
-        <a href="projects.html#project-one" class="text-link">See project →</a>
+        <p class="eyebrow">VR Horror · Solo</p>
+        <h3>Darker</h3>
+        <p class="muted">A psychological VR horror capstone, built solo in Unreal Engine over 13 weeks.</p>
+        <a href="projects.html#darker" class="text-link">See project →</a>
       </div>
       <div class="card">
-        <p class="eyebrow">Playable</p>
-        <h3>Project Two</h3>
-        <p class="muted">One-line hook for the project.</p>
-        <a href="projects.html#project-two" class="text-link">See project →</a>
+        <p class="eyebrow">Playable · Game Jam</p>
+        <h3>Bubble Boundaries</h3>
+        <p class="muted">A 2D puzzle-platformer built in 48 hours for Global Game Jam 2025.</p>
+        <a href="projects.html#bubble-boundaries" class="text-link">See project →</a>
       </div>
       <div class="card">
-        <p class="eyebrow">Art / Animation</p>
-        <h3>Project Three</h3>
-        <p class="muted">One-line hook for the project.</p>
-        <a href="projects.html#project-three" class="text-link">See project →</a>
+        <p class="eyebrow">3D Art · Animation</p>
+        <h3>Sky Kid</h3>
+        <p class="muted">Full character pipeline — modeled, rigged, animated, and built into a playable 2.5D scene.</p>
+        <a href="projects.html#sky-kid" class="text-link">See project →</a>
       </div>
+    </div>
+  </section>
+
+  <!-- IMAGE GALLERY -->
+  <section class="section container">
+    <div class="section-head">
+      <h2>From the projects</h2>
+      <a href="projects.html" class="text-link">Full galleries →</a>
+    </div>
+    <div class="circle-gallery">
+      <a href="projects.html#darker">
+        <figure>
+          <img src="assets/img/darker-01-bedroom.jpg" alt="Darker screenshot">
+          <figcaption>Darker</figcaption>
+        </figure>
+      </a>
+      <a href="projects.html#bubble-boundaries">
+        <figure>
+          <img src="assets/img/bubble-01-forest.jpg" alt="Bubble Boundaries screenshot">
+          <figcaption>Bubble Boundaries</figcaption>
+        </figure>
+      </a>
+      <a href="projects.html#sky-kid">
+        <figure>
+          <img src="assets/img/skykid-04-gameplay.jpg" alt="Sky Kid screenshot">
+          <figcaption>Sky Kid</figcaption>
+        </figure>
+      </a>
+      <a href="projects.html#retrochicken">
+        <figure>
+          <img src="assets/img/retrochicken-01-farm.jpg" alt="RetroChicken screenshot">
+          <figcaption>RetroChicken</figcaption>
+        </figure>
+      </a>
+      <a href="projects.html#elemental-expedition">
+        <figure>
+          <img src="assets/img/elemental-02-level1.jpg" alt="Elemental Expedition screenshot">
+          <figcaption>Elemental Expedition</figcaption>
+        </figure>
+      </a>
     </div>
   </section>
 
@@ -651,7 +833,7 @@ p { margin: 0 0 1em; color: var(--ink); }
 
 <footer class="site-footer">
   <div class="container">
-    <span>© 2026 Your Name</span>
+    <span>© 2026 Evie Melhuish</span>
     <span>Built with plain HTML/CSS/JS · Hosted on GitHub Pages</span>
   </div>
 </footer>

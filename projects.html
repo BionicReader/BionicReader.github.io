@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects — Your Name</title>
+<title>Projects — Evie Melhuish</title>
+<meta name="description" content="Game development projects by Evie Melhuish: Darker (VR horror), Bubble Boundaries, Sky Kid, RetroChicken, and Elemental Expedition.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -19,15 +20,21 @@
    ========================================================================== */
 
 :root {
-  --bg: #FAFAF9;
-  --bg-alt: #F1F1F0;
-  --ink: #14161A;
-  --ink-muted: #63666D;
-  --ink-faint: #9A9CA2;
-  --accent: #2F5DFF;
-  --accent-soft: #E9EDFF;
-  --border: #E1E2E4;
-  --border-strong: #C7C9CD;
+  /* Palette pulled from Evie's reference swatches: warm lamplight yellow and
+     amber sitting above a run of cool teals into near-black navy — reads like
+     a flashlight beam in the dark, which suits a horror/VR-leaning games
+     portfolio without tipping the whole site into "dark mode". */
+  --bg: #FAF8F2;
+  --bg-alt: #F1EDE1;
+  --ink: #1C262B;
+  --ink-muted: #56656C;
+  --ink-faint: #96A2A6;
+  --accent: #4A9AA0;
+  --accent-warm: #D89138;
+  --accent-soft: #E4EFEE;
+  --accent-warm-soft: #F7E7CE;
+  --border: #E4DFCF;
+  --border-strong: #C7C0AC;
 
   --font-display: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
   --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
@@ -81,6 +88,17 @@ p { margin: 0 0 1em; color: var(--ink); }
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.eyebrow::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-warm);
+  flex-shrink: 0;
 }
 
 .container {
@@ -119,7 +137,19 @@ p { margin: 0 0 1em; color: var(--ink); }
   letter-spacing: -0.01em;
 }
 
-.nav-name .dot { color: var(--accent); }
+.nav-name .dot { color: var(--accent-warm); }
+
+.nickname-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--accent-warm);
+  border: 1.5px solid var(--accent-warm);
+  border-radius: 999px;
+  padding: 3px 10px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
 
 .nav-links {
   display: flex;
@@ -186,15 +216,30 @@ p { margin: 0 0 1em; color: var(--ink); }
 
 .fr {
   position: absolute;
-  width: 18px;
-  height: 18px;
-  border: 2px solid var(--accent);
+  width: 26px;
+  height: 26px;
+  border: 3px solid var(--accent);
   pointer-events: none;
 }
-.fr-tl { top: -1px; left: -1px; border-right: none; border-bottom: none; }
-.fr-tr { top: -1px; right: -1px; border-left: none; border-bottom: none; }
-.fr-bl { bottom: -1px; left: -1px; border-right: none; border-top: none; }
-.fr-br { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+.fr-tl { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+.fr-tr { top: -2px; right: -2px; border-left: none; border-bottom: none; }
+.fr-bl { bottom: -2px; left: -2px; border-right: none; border-top: none; }
+.fr-br { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+/* Rivet dots — a small circle sitting right on each corner, the frame's
+   one deliberate square/circle mashup rather than pure right angles. */
+.fr::after {
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent-warm);
+}
+.fr-tl::after { top: -2px; left: -2px; }
+.fr-tr::after { top: -2px; right: -2px; }
+.fr-bl::after { bottom: -2px; left: -2px; }
+.fr-br::after { bottom: -2px; right: -2px; }
 
 .frame-label {
   position: absolute;
@@ -231,10 +276,11 @@ p { margin: 0 0 1em; color: var(--ink); }
 .btn:hover { background: var(--ink); color: var(--bg); }
 
 .btn-accent {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--accent-warm);
+  background: var(--accent-warm);
+  color: #fff;
 }
-.btn-accent:hover { background: var(--accent); color: #fff; }
+.btn-accent:hover { background: #fff; color: var(--accent-warm); }
 
 .text-link {
   color: var(--accent);
@@ -278,9 +324,15 @@ p { margin: 0 0 1em; color: var(--ink); }
 }
 
 .role-tags span {
-  border: 1px solid var(--border-strong);
-  padding: 5px 10px;
-  color: var(--ink-muted);
+  border: 1.5px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--ink);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+.role-tags span:nth-child(2n) {
+  border-color: var(--accent-warm);
+  background: var(--accent-warm-soft);
 }
 
 .hero-actions {
@@ -313,8 +365,20 @@ p { margin: 0 0 1em; color: var(--ink); }
 /* ---------------------------------------------------------------------- */
 
 .section {
+  position: relative;
   padding: clamp(48px, 7vw, 88px) 0;
   border-top: 1px solid var(--border);
+}
+.section::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: var(--gutter);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
 }
 
 .section-head {
@@ -335,7 +399,7 @@ p { margin: 0 0 1em; color: var(--ink); }
 @media (max-width: 620px) { .grid-3 { grid-template-columns: 1fr; } }
 
 .card {
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   padding: 22px;
   transition: border-color 0.15s ease;
 }
@@ -366,8 +430,9 @@ p { margin: 0 0 1em; color: var(--ink); }
   letter-spacing: 0.04em;
   text-decoration: none;
   color: var(--ink-muted);
-  border: 1px solid var(--border-strong);
-  padding: 6px 12px;
+  border: 2px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 6px 14px;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 .jump-links a:hover { color: var(--accent); border-color: var(--accent); }
@@ -387,7 +452,7 @@ p { margin: 0 0 1em; color: var(--ink); }
   font-size: 0.75rem;
   color: var(--ink-muted);
 }
-.project-meta span { border: 1px solid var(--border); padding: 4px 9px; }
+.project-meta span { border: 1.5px solid var(--border-strong); border-radius: 999px; padding: 4px 11px; }
 
 .embed-wrap {
   position: relative;
@@ -425,6 +490,74 @@ p { margin: 0 0 1em; color: var(--ink); }
   flex-wrap: wrap;
 }
 
+/* Secondary stills — deliberately plain (hairline border only, no corner
+   brackets) so the .frame motif stays reserved for the one hero shot per
+   project rather than being diluted across every thumbnail. */
+.still-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+.still-grid figure { margin: 0; }
+.still-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  display: block;
+}
+.still-grid figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-top: 6px;
+}
+
+/* A wide, uncropped strip for banner-shaped assets like sprite sheets */
+.sprite-strip {
+  width: 100%;
+  border: 2px solid var(--border);
+  background: var(--bg-alt);
+  padding: 10px;
+  margin-top: 16px;
+}
+.sprite-strip img { width: 100%; height: auto; display: block; }
+
+/* Circular gallery — a deliberate break from the frame's right angles,
+   used on the homepage to pull in shots from across every project. */
+.circle-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(16px, 3vw, 28px);
+  justify-content: flex-start;
+}
+.circle-gallery a { text-decoration: none; }
+.circle-gallery figure {
+  margin: 0;
+  width: clamp(96px, 14vw, 140px);
+  text-align: center;
+}
+.circle-gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  display: block;
+}
+.circle-gallery figure:nth-child(2n) img { border-color: var(--accent-warm); }
+.circle-gallery figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-top: 10px;
+}
+
 /* ---------------------------------------------------------------------- */
 /* CV PAGE                                                                  */
 /* ---------------------------------------------------------------------- */
@@ -434,9 +567,9 @@ p { margin: 0 0 1em; color: var(--ink); }
   grid-template-columns: 140px 1fr;
   gap: 18px;
   padding: 18px 0;
-  border-top: 1px solid var(--border);
+  border-top: 2px solid var(--border);
 }
-.cv-row:last-child { border-bottom: 1px solid var(--border); }
+.cv-row:last-child { border-bottom: 2px solid var(--border); }
 
 .cv-date {
   font-family: var(--font-mono);
@@ -456,8 +589,9 @@ p { margin: 0 0 1em; color: var(--ink); }
 .skills-list span {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  border: 1px solid var(--border-strong);
-  padding: 5px 10px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 5px 12px;
 }
 
 /* ---------------------------------------------------------------------- */
@@ -468,7 +602,7 @@ p { margin: 0 0 1em; color: var(--ink); }
   position: relative;
   margin-left: 6px;
   padding-left: 34px;
-  border-left: 1px solid var(--border);
+  border-left: 2px solid var(--border);
 }
 
 .timeline-item {
@@ -480,12 +614,16 @@ p { margin: 0 0 1em; color: var(--ink); }
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -39px;
-  top: 4px;
-  width: 10px;
-  height: 10px;
+  left: -43px;
+  top: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
   background: var(--bg);
-  border: 2px solid var(--accent);
+  border: 3px solid var(--accent);
+}
+.timeline-item:nth-child(2n)::before {
+  border-color: var(--accent-warm);
 }
 
 .timeline-year {
@@ -507,7 +645,7 @@ p { margin: 0 0 1em; color: var(--ink); }
 }
 
 .contact-card {
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   padding: 22px;
   text-decoration: none;
   display: block;
@@ -543,7 +681,7 @@ p { margin: 0 0 1em; color: var(--ink); }
 
 <header class="site-header">
   <nav class="nav">
-    <a href="index.html" class="nav-name">Your Name<span class="dot">.</span></a>
+    <a href="index.html" class="nav-name">Evie Melhuish<span class="dot">.</span><span class="nickname-badge">aka BIRE</span></a>
     <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -557,34 +695,100 @@ p { margin: 0 0 1em; color: var(--ink); }
 
 <!-- QUICK JUMP LINKS — add one per project section below -->
 <nav class="jump-links" aria-label="Jump to project">
-  <a href="#project-one">Project One</a>
-  <a href="#project-two">Project Two</a>
-  <a href="#project-three">Project Three</a>
-  <!-- <a href="#project-four">Project Four</a> -->
+  <a href="#darker">Darker</a>
+  <a href="#bubble-boundaries">Bubble Boundaries</a>
+  <a href="#sky-kid">Sky Kid</a>
+  <a href="#retrochicken">RetroChicken</a>
+  <a href="#elemental-expedition">Elemental Expedition</a>
 </nav>
 
 <main>
 
   <section class="container" style="padding-top: clamp(40px,6vw,64px);">
     <p class="eyebrow">Projects</p>
-    <h1 style="font-size:clamp(2rem,4vw,2.8rem); max-width:20ch;">Games, tools, and animation work.</h1>
-    <p class="muted" style="max-width:60ch;">Jump straight to a project with the links above, or scroll through everything below. Playable builds run right on the page; art/animation pieces show video or image reels instead.</p>
+    <h1 style="font-size:clamp(2rem,4vw,2.8rem); max-width:22ch;">Five projects, 2023–2025.</h1>
+    <p class="muted" style="max-width:60ch;">From a first-year Processing platformer to a solo VR horror capstone in Unreal Engine. Jump straight to one with the links above, or scroll through everything below.</p>
   </section>
 
   <!-- =====================================================================
-       PROJECT ONE — playable
+       DARKER — VR horror, solo capstone. Not web-playable (Meta Quest VR),
+       so this leads with the hero screenshot + video link rather than an iframe.
        ===================================================================== -->
-  <section id="project-one" class="project-block container">
-    <p class="eyebrow">01 — Playable</p>
-    <h2>Project One Title</h2>
+  <section id="darker" class="project-block container">
+    <p class="eyebrow">01 — Solo · VR Horror</p>
+    <h2>Darker</h2>
     <div class="project-meta">
-      <span>Role: Design + Programming</span>
-      <span>Engine: Unity</span>
+      <span>Role: Solo Developer</span>
+      <span>Engine: Unreal Engine 5</span>
+      <span>Platform: Meta Quest VR</span>
       <span>Year: 2025</span>
     </div>
     <p class="muted" style="max-width:70ch;">
-      One short paragraph on the project: what it is, the core mechanic or hook,
-      and what you were responsible for. Keep it tight — two or three sentences.
+      A psychological horror experience built for VR. Players take on the role of Adrian Hale,
+      exploring the abandoned Chamber Six of the Veyla Institute — only to discover they aren't
+      the original Adrian at all, but a manufactured consciousness trapped in an experimental
+      loop. As the sole developer over a 13-week capstone, I built every system: a phase-managed
+      state machine, VR interaction and raycast pickup, dynamic lighting with a battery-managed
+      flashlight, a render-texture security-camera puzzle, and a dual-ending choice system.
+      This was my first project in both Unreal Engine and VR.
+    </p>
+
+    <div class="frame" style="margin-top:24px;">
+      <span class="fr fr-tl"></span><span class="fr fr-tr"></span>
+      <span class="fr fr-bl"></span><span class="fr fr-br"></span>
+      <span class="frame-label">Chamber Six</span>
+      <div class="embed-wrap">
+        <img src="assets/img/darker-01-bedroom.jpg" alt="A dimly lit room in Darker with the word DARKER scrawled on the wall above a bed">
+      </div>
+    </div>
+
+    <div class="still-grid">
+      <figure>
+        <img src="assets/img/darker-02-flashlight.jpg" alt="Player flashlight beam revealing an old CRT monitor with a red interaction prompt">
+        <figcaption>Flashlight &amp; interaction</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/darker-03-notebook.jpg" alt="A handwritten notebook page lit by a spotlight">
+        <figcaption>Environmental narrative</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/darker-04-corridor.jpg" alt="A dark corridor lit by narrow overhead light beams">
+        <figcaption>Corridor lighting</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/darker-05-spotlight.jpg" alt="A spotlit ritual scene with a note and small figure">
+        <figcaption>Ending sequence</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/darker-06-credits.jpg" alt="Darker end credits screen">
+        <figcaption>Credits</figcaption>
+      </figure>
+    </div>
+
+    <div class="project-links">
+      <a href="https://www.youtube.com/playlist?list=PL6QihtD3BRKvaSYrzgI_bK5L3s5BIFot9" class="btn btn-accent" target="_blank" rel="noopener">Watch Gameplay ↗</a>
+      <a href="https://github.com/BionicReader/Darker" class="btn" target="_blank" rel="noopener">Source ↗</a>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       BUBBLE BOUNDARIES — playable, hosted on itch.io
+       ===================================================================== -->
+  <section id="bubble-boundaries" class="project-block container">
+    <p class="eyebrow">02 — Playable · Game Jam</p>
+    <h2>Bubble Boundaries</h2>
+    <div class="project-meta">
+      <span>Role: Team Lead + Developer</span>
+      <span>Team: Evie Melhuish, Kade</span>
+      <span>Built in 48 hours — Global Game Jam 2025</span>
+      <span>Theme: Bubble</span>
+      <span>Released as BIRE</span>
+    </div>
+    <p class="muted" style="max-width:70ch;">
+      A 2D puzzle-platformer where players use a bubble gun to create temporary platforms —
+      crossing gaps, blocking enemy projectiles, and climbing increasingly complex vertical
+      levels before each bubble pops. As team lead and co-developer, I built the player
+      movement, bubble-gun mechanics with ammo management, UI, and level progression framework.
     </p>
 
     <div class="frame" style="margin-top:24px;">
@@ -593,38 +797,99 @@ p { margin: 0 0 1em; color: var(--ink); }
       <span class="frame-label">Playable Build</span>
       <div class="embed-wrap">
         <!--
-          Swap the placeholder below for a real WebGL/HTML5 build embed, e.g.:
+          itch.io games can only be embedded once you grab the exact iframe
+          snippet from that game's Edit page → Embed options in itch.io.
+          Once you have it, swap this <img> for that <iframe>, e.g.:
           <iframe src="https://itch.io/embed-upload/XXXXXXX?color=333333"
-                  allowfullscreen loading="lazy" title="Project One playable build"></iframe>
-          — or self-host a Unity WebGL export in assets/games/project-one/ and
-          point src at assets/games/project-one/index.html
+                  allowfullscreen loading="lazy" title="Bubble Boundaries playable build"></iframe>
         -->
-        <div class="embed-placeholder">
-          <span>▶ Playable build goes here</span>
-          <span>Swap &lt;div class="embed-placeholder"&gt; for an &lt;iframe&gt; pointing at your itch.io embed or self-hosted WebGL build.</span>
-        </div>
+        <img src="assets/img/bubble-01-forest.jpg" alt="Bubble Boundaries gameplay screenshot showing a forest platforming level with bubble platforms">
       </div>
     </div>
 
+    <div class="still-grid">
+      <figure>
+        <img src="assets/img/bubble-02-underwater.jpg" alt="Bubble Boundaries underwater vertical climbing section">
+        <figcaption>Vertical exploration</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/bubble-03-hint.jpg" alt="Bubble Boundaries in-game hint dialogue box">
+        <figcaption>Guidance prompts</figcaption>
+      </figure>
+    </div>
+
     <div class="project-links">
-      <a href="#" class="btn btn-accent">Play on itch.io ↗</a>
-      <a href="#" class="btn">Source ↗</a>
+      <a href="https://bionicreader.itch.io/bubble-boundaries" class="btn btn-accent" target="_blank" rel="noopener">Play on itch.io ↗</a>
+      <a href="https://youtu.be/UH78j-rMFsM" class="btn" target="_blank" rel="noopener">Gameplay &amp; Code ↗</a>
     </div>
   </section>
 
   <!-- =====================================================================
-       PROJECT TWO — playable
+       SKY KID — full character pipeline: model → rig → animate → integrate.
+       A genuine build sequence, so captioned stages earn their place here.
        ===================================================================== -->
-  <section id="project-two" class="project-block container">
-    <p class="eyebrow">02 — Playable</p>
-    <h2>Project Two Title</h2>
+  <section id="sky-kid" class="project-block container">
+    <p class="eyebrow">03 — 3D Art · Rigging · Animation</p>
+    <h2>Sky Kid</h2>
     <div class="project-meta">
-      <span>Role: Programming</span>
-      <span>Engine: Godot</span>
-      <span>Year: 2024</span>
+      <span>Role: Modeling, Rigging, Animation, Integration</span>
+      <span>Tools: Blender, Unreal Engine</span>
+      <span>Motion Design &amp; Game Development Course</span>
     </div>
     <p class="muted" style="max-width:70ch;">
-      Short paragraph describing the project, your role, and the standout feature.
+      Inspired by <em>Sky: Children of the Light</em>, a fully modeled, rigged, and animated
+      character taken from concept sketch to playable game asset. Bone structure and animation
+      cycles (Bow, Light Wave, Run/Jump/Idle) were rendered from multiple angles, converted to
+      2D sprite sheets, and imported into Unreal as a 2.5D playable character — 3D fidelity with
+      2D performance.
+    </p>
+
+    <div class="still-grid" style="margin-top:24px;">
+      <figure>
+        <img src="assets/img/skykid-01-concept.jpg" alt="Sky Kid character concept art with front, back, and wing views">
+        <figcaption>01 — Concept</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/skykid-05-turnaround.jpg" alt="Sky Kid character turnaround sheet with cape">
+        <figcaption>02 — Turnaround</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/skykid-02-wireframe.jpg" alt="Sky Kid 3D wireframe model in Blender">
+        <figcaption>03 — Model</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/skykid-03-rig.jpg" alt="Sky Kid rigged character mid-animation pose in Blender">
+        <figcaption>04 — Rig &amp; Animate</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/skykid-06-run.jpg" alt="Sky Kid run cycle render">
+        <figcaption>05 — Run Cycle</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/skykid-04-gameplay.jpg" alt="Sky Kid playable 2.5D level in Unreal Engine">
+        <figcaption>06 — In-Engine</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       RETROCHICKEN — playable, hosted on itch.io
+       ===================================================================== -->
+  <section id="retrochicken" class="project-block container">
+    <p class="eyebrow">04 — Playable · Group Project</p>
+    <h2>RetroChicken</h2>
+    <div class="project-meta">
+      <span>Role: Programmer, Primary Artist, UI Designer</span>
+      <span>Team: High Five (5 members)</span>
+      <span>Engine: Godot 4</span>
+      <span>Released as BIRE</span>
+    </div>
+    <p class="muted" style="max-width:70ch;">
+      A 2D breeding simulation where players breed chickens backwards into microraptors to
+      redeem a disgraced biologist's career — inspired by Stardew Valley's visuals and
+      Wobbledogs' genetics system. As primary programmer and artist I built the pathfinding,
+      hunger system, breeding menu, and every genetic trait sprite; the hardest part was a
+      collision-based feeding system solved entirely within the chicken class, with no globals.
     </p>
 
     <div class="frame" style="margin-top:24px;">
@@ -632,60 +897,79 @@ p { margin: 0 0 1em; color: var(--ink); }
       <span class="fr fr-bl"></span><span class="fr fr-br"></span>
       <span class="frame-label">Playable Build</span>
       <div class="embed-wrap">
-        <div class="embed-placeholder">
-          <span>▶ Playable build goes here</span>
-          <span>Same pattern as Project One — replace with an iframe embed.</span>
-        </div>
+        <!-- Swap for the itch.io embed iframe once you have the snippet from itch.io's Embed options -->
+        <img src="assets/img/retrochicken-01-farm.jpg" alt="RetroChicken gameplay screenshot showing chickens on a farm">
       </div>
     </div>
 
+    <div class="still-grid">
+      <figure>
+        <img src="assets/img/retrochicken-02-breeding.jpg" alt="RetroChicken breeding result dialogue showing microraptor traits">
+        <figcaption>Breeding result</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/retrochicken-03-endgame.jpg" alt="RetroChicken end game menu">
+        <figcaption>End game menu</figcaption>
+      </figure>
+    </div>
+
     <div class="project-links">
-      <a href="#" class="btn btn-accent">Play on itch.io ↗</a>
-      <a href="#" class="btn">Source ↗</a>
+      <a href="https://bionicreader.itch.io/retro-chicken" class="btn btn-accent" target="_blank" rel="noopener">Play on itch.io ↗</a>
+      <a href="https://www.youtube.com/playlist?list=PL6QihtD3BRKsw2JhGxicPb1pRUhecFcxa" class="btn" target="_blank" rel="noopener">YouTube Playlist ↗</a>
     </div>
   </section>
 
   <!-- =====================================================================
-       PROJECT THREE — art / animation, non-playable
+       ELEMENTAL EXPEDITION — first-year project, not web-hosted.
        ===================================================================== -->
-  <section id="project-three" class="project-block container">
-    <p class="eyebrow">03 — Animation</p>
-    <h2>Project Three Title</h2>
+  <section id="elemental-expedition" class="project-block container">
+    <p class="eyebrow">05 — First Project · Introductory Programming</p>
+    <h2>Elemental Expedition</h2>
     <div class="project-meta">
-      <span>Role: Animation</span>
-      <span>Tools: Procreate, After Effects</span>
-      <span>Year: 2024</span>
+      <span>Role: Solo — code, levels, all pixel art</span>
+      <span>Framework: Processing (Java)</span>
+      <span>Year: 2023</span>
     </div>
     <p class="muted" style="max-width:70ch;">
-      Short paragraph on this piece — the brief, the style, what it was for.
+      A 2D co-op platformer inspired by Fireboy and Watergirl: two characters with elemental
+      abilities — fire and water — navigate dark, obstacle-filled levels that each character
+      interacts with differently. My introduction to game development, and the project that
+      taught me collision detection hides far more complexity than it looks like from the
+      outside. All sprites, tiles, and UI were designed and drawn by me.
     </p>
 
-    <div class="frame" style="margin-top:24px;">
-      <span class="fr fr-tl"></span><span class="fr fr-tr"></span>
-      <span class="fr fr-bl"></span><span class="fr fr-br"></span>
-      <span class="frame-label">Reel</span>
-      <div class="embed-wrap">
-        <!--
-          For non-playable pieces, embed a video instead of an iframe game build:
-          <video src="assets/games/project-three/reel.mp4" controls poster="assets/img/project-three-poster.jpg"></video>
-          or an <img> for a single still.
-        -->
-        <div class="embed-placeholder">
-          <span>🎞 Video reel or image goes here</span>
-          <span>Swap for a &lt;video&gt; or &lt;img&gt; tag.</span>
-        </div>
-      </div>
+    <div class="sprite-strip">
+      <img src="assets/img/elemental-01-sprites.jpg" alt="Elemental Expedition character sprite sheets for the fire and water characters">
+    </div>
+
+    <div class="still-grid">
+      <figure>
+        <img src="assets/img/elemental-02-level1.jpg" alt="Elemental Expedition level 1 gameplay screenshot">
+        <figcaption>Level one</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/elemental-03-level2.jpg" alt="Elemental Expedition level 2 gameplay screenshot">
+        <figcaption>Level two</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/elemental-05-controls.jpg" alt="Elemental Expedition controls screen">
+        <figcaption>Controls</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/elemental-04-menu.jpg" alt="Elemental Expedition level select menu">
+        <figcaption>Menu</figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- Duplicate a project-block section above for each additional game/piece,
-       and add a matching link in the .jump-links nav near the top. -->
+  <!-- More projects coming — duplicate a <section class="project-block"> above
+       for each new one, and add a matching link in the .jump-links nav near the top. -->
 
 </main>
 
 <footer class="site-footer">
   <div class="container">
-    <span>© 2026 Your Name</span>
+    <span>© 2026 Evie Melhuish</span>
     <span><a href="index.html" class="text-link">Back to top</a></span>
   </div>
 </footer>
