@@ -4,678 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Timeline — Evie Melhuish</title>
-<meta name="description" content="Evie Melhuish's game development timeline, 2023–2026.">
+<meta name="description" content="Timeline of projects and milestones by Evie Melhuish, 2022–2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-/* ==========================================================================
-   DESIGN TOKENS
-   Palette: cool off-white ground, near-black ink, one indigo "select" accent
-   (a nod to editor/engine selection-outline blue, kept sparing).
-   Type: Space Grotesk (display, technical/geometric) + Inter (body) +
-   Space Mono (utility — dates, labels, coordinates).
-   Signature element: the "frame" — four corner brackets, like a viewport /
-   camera gate / selection reticle. Used to mark anything the visitor should
-   treat as a "screen": the hero portrait, project embeds, CV blocks.
-   ========================================================================== */
-
-:root {
-  /* Palette pulled from Evie's reference swatches: warm lamplight yellow and
-     amber sitting above a run of cool teals into near-black navy — reads like
-     a flashlight beam in the dark, which suits a horror/VR-leaning games
-     portfolio without tipping the whole site into "dark mode". */
-  --bg: #FAF8F2;
-  --bg-alt: #F1EDE1;
-  --ink: #1C262B;
-  --ink-muted: #56656C;
-  --ink-faint: #96A2A6;
-  --accent: #4A9AA0;
-  --accent-warm: #D89138;
-  --accent-soft: #E4EFEE;
-  --accent-warm-soft: #F7E7CE;
-  --border: #E4DFCF;
-  --border-strong: #C7C0AC;
-
-  --font-display: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
-  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-  --font-mono: 'Space Mono', 'SFMono-Regular', Consolas, monospace;
-
-  --max-width: 1120px;
-  --gutter: clamp(20px, 5vw, 64px);
-  --frame-pad: clamp(20px, 4vw, 40px);
-}
-
-@media (prefers-color-scheme: dark) {
-  /* Intentionally not auto-switching — a single considered light theme
-     is part of the "clean minimal" brief. Left as a hook if you want
-     to add a dark mode later. */
-}
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-img { max-width: 100%; display: block; }
-a { color: inherit; }
-
-h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  font-weight: 500;
-  line-height: 1.1;
-  margin: 0 0 0.5em;
-  letter-spacing: -0.01em;
-}
-
-p { margin: 0 0 1em; color: var(--ink); }
-.muted { color: var(--ink-muted); }
-
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-}
-.eyebrow::before {
-  content: '';
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent-warm);
-  flex-shrink: 0;
-}
-
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
-}
-
-/* ---------------------------------------------------------------------- */
-/* NAVIGATION                                                              */
-/* ---------------------------------------------------------------------- */
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(250, 250, 249, 0.9);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 18px var(--gutter);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-name {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: -0.01em;
-}
-
-.nav-name .dot { color: var(--accent-warm); }
-
-.nickname-badge {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
-  color: var(--accent-warm);
-  border: 1.5px solid var(--accent-warm);
-  border-radius: 999px;
-  padding: 3px 10px;
-  margin-left: 10px;
-  vertical-align: middle;
-}
-
-.nav-links {
-  display: flex;
-  gap: clamp(14px, 2vw, 28px);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--ink-muted);
-  padding-bottom: 4px;
-  border-bottom: 1px solid transparent;
-  transition: color 0.15s ease, border-color 0.15s ease;
-}
-
-.nav-links a:hover,
-.nav-links a[aria-current="page"] {
-  color: var(--ink);
-  border-color: var(--accent);
-}
-
-.nav-toggle {
-  display: none;
-  background: none;
-  border: 1px solid var(--border-strong);
-  padding: 6px 10px;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  cursor: pointer;
-}
-
-@media (max-width: 720px) {
-  .nav-toggle { display: inline-block; }
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    padding: 12px var(--gutter) 20px;
-    gap: 14px;
-    display: none;
-  }
-  .nav-links.open { display: flex; }
-}
-
-/* ---------------------------------------------------------------------- */
-/* SIGNATURE ELEMENT — THE FRAME (viewport / camera gate / reticle)        */
-/* ---------------------------------------------------------------------- */
-
-.frame {
-  position: relative;
-  padding: var(--frame-pad);
-  border: 1px solid var(--border);
-}
-
-.fr {
-  position: absolute;
-  width: 26px;
-  height: 26px;
-  border: 3px solid var(--accent);
-  pointer-events: none;
-}
-.fr-tl { top: -2px; left: -2px; border-right: none; border-bottom: none; }
-.fr-tr { top: -2px; right: -2px; border-left: none; border-bottom: none; }
-.fr-bl { bottom: -2px; left: -2px; border-right: none; border-top: none; }
-.fr-br { bottom: -2px; right: -2px; border-left: none; border-top: none; }
-
-/* Rivet dots — a small circle sitting right on each corner, the frame's
-   one deliberate square/circle mashup rather than pure right angles. */
-.fr::after {
-  content: '';
-  position: absolute;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--accent-warm);
-}
-.fr-tl::after { top: -2px; left: -2px; }
-.fr-tr::after { top: -2px; right: -2px; }
-.fr-bl::after { bottom: -2px; left: -2px; }
-.fr-br::after { bottom: -2px; right: -2px; }
-
-.frame-label {
-  position: absolute;
-  top: -10px;
-  left: 20px;
-  background: var(--bg);
-  padding: 0 8px;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-}
-
-/* ---------------------------------------------------------------------- */
-/* BUTTONS / LINKS                                                         */
-/* ---------------------------------------------------------------------- */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  color: var(--ink);
-  border: 1px solid var(--ink);
-  padding: 11px 20px;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-.btn:hover { background: var(--ink); color: var(--bg); }
-
-.btn-accent {
-  border-color: var(--accent-warm);
-  background: var(--accent-warm);
-  color: #fff;
-}
-.btn-accent:hover { background: #fff; color: var(--accent-warm); }
-
-.text-link {
-  color: var(--accent);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: var(--accent-soft);
-}
-.text-link:hover { text-decoration-color: var(--accent); }
-
-/* ---------------------------------------------------------------------- */
-/* HERO                                                                     */
-/* ---------------------------------------------------------------------- */
-
-.hero {
-  padding: clamp(48px, 8vw, 96px) 0 clamp(40px, 6vw, 72px);
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: clamp(32px, 5vw, 64px);
-  align-items: center;
-}
-
-@media (max-width: 820px) {
-  .hero-grid { grid-template-columns: 1fr; }
-}
-
-.hero h1 {
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
-  margin-bottom: 0.3em;
-}
-
-.role-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 18px 0 26px;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-}
-
-.role-tags span {
-  border: 1.5px solid var(--accent);
-  background: var(--accent-soft);
-  color: var(--ink);
-  padding: 6px 14px;
-  border-radius: 999px;
-}
-.role-tags span:nth-child(2n) {
-  border-color: var(--accent-warm);
-  background: var(--accent-warm-soft);
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 28px;
-}
-
-.portrait-frame {
-  aspect-ratio: 4 / 5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-alt);
-}
-
-.portrait-frame img { width: 100%; height: 100%; object-fit: cover; }
-
-.portrait-placeholder {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--ink-faint);
-  text-align: center;
-  padding: 0 20px;
-}
-
-/* ---------------------------------------------------------------------- */
-/* SECTIONS / GENERIC                                                      */
-/* ---------------------------------------------------------------------- */
-
-.section {
-  position: relative;
-  padding: clamp(48px, 7vw, 88px) 0;
-  border-top: 1px solid var(--border);
-}
-.section::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: var(--gutter);
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--accent);
-  border: 2px solid var(--bg);
-}
-
-.section-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 24px;
-  margin-bottom: clamp(28px, 4vw, 44px);
-  flex-wrap: wrap;
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-@media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 620px) { .grid-3 { grid-template-columns: 1fr; } }
-
-.card {
-  border: 2px solid var(--border);
-  padding: 22px;
-  transition: border-color 0.15s ease;
-}
-.card:hover { border-color: var(--accent); }
-
-.card h3 { font-size: 1.05rem; margin-bottom: 6px; }
-
-/* ---------------------------------------------------------------------- */
-/* PROJECTS PAGE                                                           */
-/* ---------------------------------------------------------------------- */
-
-.jump-links {
-  position: sticky;
-  top: 61px; /* sits just under header */
-  z-index: 40;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  padding: 14px var(--gutter);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 10px;
-}
-
-.jump-links a {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  color: var(--ink-muted);
-  border: 2px solid var(--border-strong);
-  border-radius: 999px;
-  padding: 6px 14px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-}
-.jump-links a:hover { color: var(--accent); border-color: var(--accent); }
-
-.project-block {
-  padding: clamp(48px, 7vw, 88px) 0;
-  border-top: 1px solid var(--border);
-  scroll-margin-top: 130px;
-}
-
-.project-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 10px 0 18px;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--ink-muted);
-}
-.project-meta span { border: 1.5px solid var(--border-strong); border-radius: 999px; padding: 4px 11px; }
-
-.embed-wrap {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background: var(--bg-alt);
-}
-
-.embed-wrap iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-}
-
-.embed-placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--ink-faint);
-  text-align: center;
-  padding: 0 24px;
-}
-
-.project-links {
-  display: flex;
-  gap: 12px;
-  margin-top: 18px;
-  flex-wrap: wrap;
-}
-
-/* Secondary stills — deliberately plain (hairline border only, no corner
-   brackets) so the .frame motif stays reserved for the one hero shot per
-   project rather than being diluted across every thumbnail. */
-.still-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
-  margin-top: 16px;
-}
-.still-grid figure { margin: 0; }
-.still-grid img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border: 2px solid var(--border);
-  display: block;
-}
-.still-grid figcaption {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  margin-top: 6px;
-}
-
-/* A wide, uncropped strip for banner-shaped assets like sprite sheets */
-.sprite-strip {
-  width: 100%;
-  border: 2px solid var(--border);
-  background: var(--bg-alt);
-  padding: 10px;
-  margin-top: 16px;
-}
-.sprite-strip img { width: 100%; height: auto; display: block; }
-
-/* Circular gallery — a deliberate break from the frame's right angles,
-   used on the homepage to pull in shots from across every project. */
-.circle-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: clamp(16px, 3vw, 28px);
-  justify-content: flex-start;
-}
-.circle-gallery a { text-decoration: none; }
-.circle-gallery figure {
-  margin: 0;
-  width: clamp(96px, 14vw, 140px);
-  text-align: center;
-}
-.circle-gallery img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--accent);
-  display: block;
-}
-.circle-gallery figure:nth-child(2n) img { border-color: var(--accent-warm); }
-.circle-gallery figcaption {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  margin-top: 10px;
-}
-
-/* ---------------------------------------------------------------------- */
-/* CV PAGE                                                                  */
-/* ---------------------------------------------------------------------- */
-
-.cv-row {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 18px;
-  padding: 18px 0;
-  border-top: 2px solid var(--border);
-}
-.cv-row:last-child { border-bottom: 2px solid var(--border); }
-
-.cv-date {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--ink-muted);
-}
-
-@media (max-width: 620px) {
-  .cv-row { grid-template-columns: 1fr; gap: 4px; }
-}
-
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.skills-list span {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  border: 1.5px solid var(--border-strong);
-  border-radius: 999px;
-  padding: 5px 12px;
-}
-
-/* ---------------------------------------------------------------------- */
-/* TIMELINE PAGE (a real sequence — numbering earns its place here)        */
-/* ---------------------------------------------------------------------- */
-
-.timeline {
-  position: relative;
-  margin-left: 6px;
-  padding-left: 34px;
-  border-left: 2px solid var(--border);
-}
-
-.timeline-item {
-  position: relative;
-  padding-bottom: clamp(36px, 5vw, 56px);
-}
-.timeline-item:last-child { padding-bottom: 0; }
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -43px;
-  top: 2px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--bg);
-  border: 3px solid var(--accent);
-}
-.timeline-item:nth-child(2n)::before {
-  border-color: var(--accent-warm);
-}
-
-.timeline-year {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--accent);
-  margin-bottom: 4px;
-  display: block;
-}
-
-/* ---------------------------------------------------------------------- */
-/* CONTACT PAGE                                                            */
-/* ---------------------------------------------------------------------- */
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-}
-
-.contact-card {
-  border: 2px solid var(--border);
-  padding: 22px;
-  text-decoration: none;
-  display: block;
-  transition: border-color 0.15s ease;
-}
-.contact-card:hover { border-color: var(--accent); }
-.contact-card .eyebrow { margin-bottom: 8px; }
-.contact-card strong { font-family: var(--font-display); font-size: 1.05rem; }
-
-/* ---------------------------------------------------------------------- */
-/* FOOTER                                                                   */
-/* ---------------------------------------------------------------------- */
-
-.site-footer {
-  border-top: 1px solid var(--border);
-  padding: 32px var(--gutter) 48px;
-  margin-top: 40px;
-}
-.site-footer .container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--ink-muted);
-  padding: 0;
-}
-
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -687,7 +19,7 @@ p { margin: 0 0 1em; color: var(--ink); }
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="cv.html">CV</a></li>
-      <li><a href="timeline.html">Timeline</a></li>
+      <li><a href="timeline.html" aria-current="page">Timeline</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
@@ -698,7 +30,7 @@ p { margin: 0 0 1em; color: var(--ink); }
   <section class="container" style="padding-top: clamp(40px,6vw,64px);">
     <p class="eyebrow">Timeline</p>
     <h1 style="font-size:clamp(2rem,4vw,2.8rem); max-width:20ch;">How the work adds up.</h1>
-    <p class="muted" style="max-width:60ch;">A chronological run-through of projects and milestones, 2023–2026 — newest first.</p>
+    <p class="muted" style="max-width:60ch;">A chronological run-through of projects and milestones, 2022–2026 — newest first.</p>
   </section>
 
   <section class="section container">
@@ -706,8 +38,26 @@ p { margin: 0 0 1em; color: var(--ink); }
 
       <li class="timeline-item">
         <span class="timeline-year">2026</span>
-        <h3 style="font-size:1.1rem; margin-bottom:4px;">Graduate Diploma in Digital Innovation begins</h3>
-        <p class="muted">Victoria University of Wellington — deepening animation and advanced game design theory.</p>
+        <h3 style="font-size:1.1rem; margin-bottom:4px;">Graduate Diploma in Design Innovation (Game Design)</h3>
+        <p class="muted">Victoria University of Wellington — in progress.</p>
+      </li>
+
+      <li class="timeline-item">
+        <span class="timeline-year">2026</span>
+        <h3 style="font-size:1.1rem; margin-bottom:4px;">We Have A Problem — capstone</h3>
+        <p class="muted">A two-player co-op sci-fi escape game in Godot 4, where I took the digital design role.</p>
+      </li>
+
+      <li class="timeline-item">
+        <span class="timeline-year">2026</span>
+        <h3 style="font-size:1.1rem; margin-bottom:4px;">The King’s Messenger — Head Developer</h3>
+        <p class="muted">Led three developers and three artists through a full production cycle; released for Windows and macOS.</p>
+      </li>
+
+      <li class="timeline-item">
+        <span class="timeline-year">2025</span>
+        <h3 style="font-size:1.1rem; margin-bottom:4px;">Graduated with a BSc</h3>
+        <p class="muted">Computer Science, and Computer Graphics and Games, at Victoria University of Wellington.</p>
       </li>
 
       <li class="timeline-item">
@@ -719,7 +69,7 @@ p { margin: 0 0 1em; color: var(--ink); }
       <li class="timeline-item">
         <span class="timeline-year">2025</span>
         <h3 style="font-size:1.1rem; margin-bottom:4px;">Bubble Boundaries — Global Game Jam</h3>
-        <p class="muted">Led a two-person team to build a 2D puzzle-platformer in 48 hours around the theme "Bubble."</p>
+        <p class="muted">Led a two-person team to build a 2D puzzle-platformer in 48 hours around the theme “Bubble.”</p>
       </li>
 
       <li class="timeline-item">
@@ -740,7 +90,13 @@ p { margin: 0 0 1em; color: var(--ink); }
         <p class="muted">Enrolled in an introductory game design paper on a whim — it became my highest grade and set the direction for everything since.</p>
       </li>
 
-      <!-- Add more <li class="timeline-item"> blocks as your history grows -->
+      <li class="timeline-item">
+        <span class="timeline-year">2022</span>
+        <h3 style="font-size:1.1rem; margin-bottom:4px;">Carlien Calvert Prize &amp; Raukaraka Scholarship</h3>
+        <p class="muted">First in Visual Art (Photography), and a Victoria University scholarship for leadership and community work.</p>
+      </li>
+
+      <!-- Add more <li class="timeline-item"> blocks as you date the other projects -->
 
     </ol>
   </section>
