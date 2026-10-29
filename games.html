@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Games — Evie Melhuish</title>
+<meta name="description" content="Games projects by Evie Melhuish: The King’s Messenger, What Waits in the Cave, Did You Hear That, Darker, Bubble Boundaries, RetroChicken.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="nav-name">Evie Melhuish<span class="dot">.</span><span class="nickname-badge">aka BIRE</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-dropdown">
+        <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-current="page">Projects <span class="caret" aria-hidden="true">▾</span></button>
+        <ul class="dropdown">
+          <li><a href="games.html" aria-current="page">Games</a></li>
+          <li><a href="design.html">Design</a></li>
+          <li><a href="animation.html">Animation</a></li>
+        </ul>
+      </li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="timeline.html">Timeline</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="container" style="padding-top: clamp(28px,4vw,44px);">
+    <p class="eyebrow">Projects</p>
+    <h1 style="font-size:clamp(1.8rem,3.4vw,2.4rem);">Games</h1>
+    <p class="muted" style="max-width:60ch;">Playable builds, jam games and narrative projects — across programming, assets and writing.</p>
+    <p class="list-label">Jump to a project</p>
+    <ul class="project-list" aria-label="Projects in Games">
+      <li><a href="#kings-messenger"><span class="n">01</span><span class="t">The King’s Messenger</span><span class="go" aria-hidden="true">↓</span></a></li>
+      <li><a href="#what-waits-in-the-cave"><span class="n">02</span><span class="t">What Waits in the Cave</span><span class="go" aria-hidden="true">↓</span></a></li>
+      <li><a href="#did-you-hear-that"><span class="n">03</span><span class="t">Did You Hear That</span><span class="go" aria-hidden="true">↓</span></a></li>
+      <li><a href="#darker"><span class="n">04</span><span class="t">Darker</span><span class="go" aria-hidden="true">↓</span></a></li>
+      <li><a href="#bubble-boundaries"><span class="n">05</span><span class="t">Bubble Boundaries</span><span class="go" aria-hidden="true">↓</span></a></li>
+      <li><a href="#retrochicken"><span class="n">06</span><span class="t">RetroChicken</span><span class="go" aria-hidden="true">↓</span></a></li>
+    </ul>
+  </section>
+
+  <!-- ################################################################
+       GAMES PROJECTS
+       To add a project: copy a <section class="project-block"> below, change its id,
+       and add a matching link in the pill list at the top of this page.
+       ################################################################ -->
+
+  <!-- =====================================================================
+       THE KING’S MESSENGER
+       ===================================================================== -->
+  <section id="kings-messenger" class="project-block container">
+    <p class="eyebrow">01 — Team Lead · Delivery Sim</p>
+    <h2>The King’s Messenger</h2>
+    <div class="project-meta">
+      <span>Role: Head Developer</span>
+      <span>Team: 3 developers, 3 artists</span>
+      <span>Engine: Godot 4</span>
+      <span>Platform: Windows &amp; macOS</span>
+      <span>Year: 2026</span>
+    </div>
+    <!-- TODO: point the itch.io link at the game’s own page. -->
+    <p class="muted" style="max-width:70ch;">
+      A delivery-simulation side-scroller set across five villages. As head developer I led a team of three developers and three artists through a full production cycle, from first prototype to a released build for Windows and macOS.
+    </p>
+
+    <div class="frame" style="margin-top:16px;">
+      <span class="fr fr-tl"></span><span class="fr fr-tr"></span>
+      <span class="fr fr-bl"></span><span class="fr fr-br"></span>
+      <span class="frame-label">Gallery</span>
+      <div class="embed-wrap">
+        <!-- Windows and macOS builds, so this leads with screenshots. If you export a web build to itch.io, swap the <img> for the itch.io iframe (itch.io → Edit game → Embed options). -->
+        <img src="assets/img/kings-messenger-01-main.jpg" alt="The King’s Messenger — main menu">
+      </div>
+    </div>
+
+    <div class="still-grid">
+      <figure>
+        <img src="assets/img/kings-messenger-02-gameplay1.jpg" alt="The King’s Messenger — gameplay" loading="lazy">
+        <figcaption>Gameplay</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/kings-messenger-03-gameplay2.jpg" alt="The King’s Messenger — gameplay" loading="lazy">
+        <figcaption>Gameplay</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/kings-messenger-04-ui1.jpg" alt="The King’s Messenger — interface" loading="lazy">
+        <figcaption>Interface</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/kings-messenger-05-ui2.jpg" alt="The King’s Messenger — interface" loading="lazy">
+        <figcaption>Interface</figcaption>
+      </figure>
+    </div>
+
+    <div class="project-links">
+      <a href="https://bionicreader.itch.io/" class="btn btn-accent" target="_blank" rel="noopener">Get it on itch.io ↗</a>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       WHAT WAITS IN THE CAVE
+       ===================================================================== -->
+  <section id="what-waits-in-the-cave" class="project-block container">
+    <p class="eyebrow">02 — Game · Asset Creation</p>
+    <h2>What Waits in the Cave</h2>
+    <div class="project-meta">
+      <span>Role: Asset Creation</span>
+    </div>
+    <!-- TODO: check the description (Gorg modelled and rigged) and add engine/year to meta. -->
+    <p class="muted" style="max-width:70ch;">
+      A game project where my contribution was asset creation. I made the environment and prop assets that fill the cave, and modelled and rigged the character Gorg.
+    </p>
+
+    <div class="frame" style="margin-top:16px;">
+      <span class="fr fr-tl"></span><span class="fr fr-tr"></span>
+      <span class="fr fr-bl"></span><span class="fr fr-br"></span>
+      <span class="frame-label">Playthrough</span>
+      <div class="embed-wrap">
+        <!-- Playthrough on YouTube. For a playable version, itch.io → Edit game → Embed options → copy the iframe and replace the one below. -->
+        <iframe src="https://www.youtube.com/embed/G14VPygShNc" title="What Waits in the Cave playthrough" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <h3 class="still-group-title">In the game</h3>
+    <div class="still-grid">
+      <figure>
+        <img src="assets/img/what-waits-in-the-cave-01-main.jpg" alt="What Waits in the Cave — title screen" loading="lazy">
+        <figcaption>Title screen</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/what-waits-in-the-cave-02-inside1.jpg" alt="What Waits in the Cave — inside the cave" loading="lazy">
+        <figcaption>Inside the cave</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/what-waits-in-the-cave-03-inside2.jpg" alt="What Waits in the Cave — inside the cave" loading="lazy">
+        <figcaption>Inside the cave</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="still-group-title">Assets</h3>
+    <div class="still-grid still-grid--contain">
+      <figure>
+        <img src="assets/img/what-waits-in-the-cave-asset-basket.png" alt="What Waits in the Cave — basket" loading="lazy">
+        <figcaption>Basket</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/what-waits-in-the-cave-asset-blanket.png" alt="What Waits in the Cave — blanket" loading="lazy">
+        <figcaption>Blanket</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/what-waits-in-the-cave-asset-bone.png" alt="What Waits in the Cave — bone" loading="lazy">
+        <figcaption>Bone</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/what-waits-in-the-cave-asset-cliff-cave.png" alt="What Waits in the Cave — cliff cave" loading="lazy">
+        <figcaption>Cliff cave</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/what-waits-in-the-cave-asset-fireplace.png" alt="What Waits in the Cave — fireplace" loading="lazy">
+        <figcaption>Fireplace</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/what-waits-in-the-cave-asset-gorg-model.png" alt="What Waits in the Cave — gorg — model" loading="lazy">
+        <figcaption>Gorg — model</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/what-waits-in-the-cave-asset-gorg-rig.png" alt="What Waits in the Cave — gorg — rig" loading="lazy">
+        <figcaption>Gorg — rig</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/what-waits-in-the-cave-asset-knife.png" alt="What Waits in the Cave — knife" loading="lazy">
+        <figcaption>Knife</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/what-waits-in-the-cave-asset-cliff-wall.png" alt="What Waits in the Cave — large cliff wall" loading="lazy">
+        <figcaption>Large cliff wall</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/what-waits-in-the-cave-asset-rib.png" alt="What Waits in the Cave — rib" loading="lazy">
+        <figcaption>Rib</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/what-waits-in-the-cave-asset-tree.png" alt="What Waits in the Cave — tree" loading="lazy">
+        <figcaption>Tree</figcaption>
+      </figure>
+    </div>
+
+    <div class="project-links">
+      <a href="https://youtu.be/G14VPygShNc" class="btn btn-accent" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       DID YOU HEAR THAT
+       ===================================================================== -->
+  <section id="did-you-hear-that" class="project-block container">
+    <p class="eyebrow">03 — Game · Interactive Fiction</p>
+    <h2>Did You Hear That</h2>
+    <div class="project-meta">
+      <span>Role: Writer &amp; Designer</span>
+      <span>Tool: Twine</span>
+    </div>
+    <p class="muted" style="max-width:70ch;">
+      A playable interactive fiction built in Twine from my own writing, turning a written piece into something players move through by making choices.
+    </p>
+
+    <div class="frame" style="margin-top:16px;">
+      <span class="fr fr-tl"></span><span class="fr fr-tr"></span>
+      <span class="fr fr-bl"></span><span class="fr fr-br"></span>
+      <span class="frame-label">Play in Browser</span>
+      <div class="embed-wrap">
+        <!-- Twine → open the story → Build → Publish to File. Save the HTML as assets/games/did-you-hear-that/index.html and this embed works. -->
+        <iframe src="assets/games/did-you-hear-that/index.html" title="Did You Hear That — playable Twine game" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="still-grid">
+      <figure>
+        <img src="assets/img/did-you-hear-that-01-setup.jpg" alt="Did You Hear That — story setup in Twine" loading="lazy">
+        <figcaption>Story setup</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/did-you-hear-that-02-choice.jpg" alt="Did You Hear That — a point of choice in Twine" loading="lazy">
+        <figcaption>Point of choice</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       DARKER
+       ===================================================================== -->
+  <section id="darker" class="project-block container">
+    <p class="eyebrow">04 — Solo · VR Horror</p>
+    <h2>Darker</h2>
+    <div class="project-meta">
+      <span>Role: Solo Developer</span>
+      <span>Engine: Unreal Engine 5</span>
+      <span>Platform: Meta Quest VR</span>
+      <span>Year: 2025</span>
+    </div>
+    <p class="muted" style="max-width:70ch;">
+      A psychological horror experience built for VR. Players take on the role of Adrian Hale, exploring the abandoned Chamber Six of the Veyla Institute — only to discover they aren’t the original Adrian at all, but a manufactured consciousness trapped in an experimental loop. As the sole developer over a 13-week capstone, I built every system: a phase-managed state machine, VR interaction and raycast pickup, dynamic lighting with a battery-managed flashlight, a render-texture security-camera puzzle, and a dual-ending choice system. This was my first project in both Unreal Engine and VR.
+    </p>
+
+    <div class="frame" style="margin-top:16px;">
+      <span class="fr fr-tl"></span><span class="fr fr-tr"></span>
+      <span class="fr fr-bl"></span><span class="fr fr-br"></span>
+      <span class="frame-label">Playthrough</span>
+      <div class="embed-wrap">
+        <!-- Not web-playable (Meta Quest VR), so this embeds the YouTube playlist of gameplay. -->
+        <iframe src="https://www.youtube.com/embed/videoseries?list=PL6QihtD3BRKvaSYrzgI_bK5L3s5BIFot9" title="Darker playthrough" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="still-grid">
+      <figure>
+        <img src="assets/img/darker-01-cover.jpg" alt="Darker cover art" loading="lazy">
+        <figcaption>Cover</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/darker-02-tv.jpg" alt="Darker — the old television" loading="lazy">
+        <figcaption>The TV</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/darker-03-notebook.jpg" alt="Darker — a handwritten notebook page" loading="lazy">
+        <figcaption>Environmental narrative</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/darker-04-ending.jpg" alt="Darker — ending sequence" loading="lazy">
+        <figcaption>Ending sequence</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/darker-05-credits.jpg" alt="Darker end credits screen" loading="lazy">
+        <figcaption>Credits</figcaption>
+      </figure>
+    </div>
+
+    <div class="project-links">
+      <a href="https://www.youtube.com/playlist?list=PL6QihtD3BRKvaSYrzgI_bK5L3s5BIFot9" class="btn btn-accent" target="_blank" rel="noopener">Watch Gameplay ↗</a>
+      <a href="https://github.com/BionicReader/Darker" class="btn" target="_blank" rel="noopener">Source ↗</a>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       BUBBLE BOUNDARIES
+       ===================================================================== -->
+  <section id="bubble-boundaries" class="project-block container">
+    <p class="eyebrow">05 — Playable · Game Jam</p>
+    <h2>Bubble Boundaries</h2>
+    <div class="project-meta">
+      <span>Role: Team Lead + Developer</span>
+      <span>Team: Evie Melhuish, Kade</span>
+      <span>Built in 48 hours — Global Game Jam 2025</span>
+      <span>Theme: Bubble</span>
+      <span>Released as BIRE</span>
+    </div>
+    <p class="muted" style="max-width:70ch;">
+      A 2D puzzle-platformer where players use a bubble gun to create temporary platforms — crossing gaps, blocking enemy projectiles, and climbing increasingly complex vertical levels before each bubble pops. As team lead and co-developer, I built the player movement, bubble-gun mechanics with ammo management, UI, and level progression framework.
+    </p>
+
+    <div class="frame" style="margin-top:16px;">
+      <span class="fr fr-tl"></span><span class="fr fr-tr"></span>
+      <span class="fr fr-bl"></span><span class="fr fr-br"></span>
+      <span class="frame-label">Play in Browser</span>
+      <div class="embed-wrap">
+        <!-- Click-to-play: nothing loads (or makes sound) until the visitor clicks. Unzip BB3.zip into assets/games/bubble-boundaries/ so index.html sits directly inside that folder. -->
+        <button type="button" class="play-gate" data-src="assets/games/bubble-boundaries/index.html" data-title="Bubble Boundaries — playable build" aria-label="Play Bubble Boundaries"><img src="assets/img/bubble-boundaries-01.jpg" alt="Bubble Boundaries gameplay screenshot"><span class="play-gate-cta">▶ Click to play <small>(has sound)</small></span></button>
+      </div>
+    </div>
+
+    <div class="still-grid">
+      <figure>
+        <img src="assets/img/bubble-boundaries-02.jpg" alt="Bubble Boundaries gameplay" loading="lazy">
+        <figcaption>Gameplay</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/bubble-boundaries-03.jpg" alt="Bubble Boundaries gameplay" loading="lazy">
+        <figcaption>Gameplay</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/bubble-boundaries-04.jpg" alt="Bubble Boundaries gameplay" loading="lazy">
+        <figcaption>Gameplay</figcaption>
+      </figure>
+    </div>
+
+    <div class="project-links">
+      <a href="https://bionicreader.itch.io/bubble-boundaries" class="btn btn-accent" target="_blank" rel="noopener">Play on itch.io ↗</a>
+      <a href="https://youtu.be/UH78j-rMFsM" class="btn" target="_blank" rel="noopener">Gameplay &amp; Code ↗</a>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       RETROCHICKEN
+       ===================================================================== -->
+  <section id="retrochicken" class="project-block container">
+    <p class="eyebrow">06 — Playable · Group Project</p>
+    <h2>RetroChicken</h2>
+    <div class="project-meta">
+      <span>Role: Programmer, Primary Artist, UI Designer</span>
+      <span>Team: High Five (5 members)</span>
+      <span>Engine: Godot 4</span>
+      <span>Released as BIRE</span>
+    </div>
+    <p class="muted" style="max-width:70ch;">
+      A 2D breeding simulation where players breed chickens backwards into microraptors to redeem a disgraced biologist’s career — inspired by Stardew Valley’s visuals and Wobbledogs’ genetics system. As primary programmer and artist I built the pathfinding, hunger system, breeding menu, and every genetic trait sprite; the hardest part was a collision-based feeding system solved entirely within the chicken class, with no globals.
+    </p>
+
+    <div class="frame" style="margin-top:16px;">
+      <span class="fr fr-tl"></span><span class="fr fr-tr"></span>
+      <span class="fr fr-bl"></span><span class="fr fr-br"></span>
+      <span class="frame-label">Playthrough</span>
+      <div class="embed-wrap">
+        <!-- Embeds the YouTube playlist. For a playable version, itch.io → Edit game → Embed options → copy the iframe and replace the one below. -->
+        <iframe src="https://www.youtube.com/embed/videoseries?list=PL6QihtD3BRKsw2JhGxicPb1pRUhecFcxa" title="RetroChicken gameplay" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="still-grid">
+      <figure>
+        <img src="assets/img/retrochicken-01.jpg" alt="RetroChicken gameplay" loading="lazy">
+        <figcaption>Gameplay</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/retrochicken-02.jpg" alt="RetroChicken gameplay" loading="lazy">
+        <figcaption>Gameplay</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/retrochicken-03.jpg" alt="RetroChicken gameplay" loading="lazy">
+        <figcaption>Gameplay</figcaption>
+      </figure>
+    </div>
+
+    <div class="project-links">
+      <a href="https://bionicreader.itch.io/retro-chicken" class="btn btn-accent" target="_blank" rel="noopener">Play on itch.io ↗</a>
+      <a href="https://www.youtube.com/playlist?list=PL6QihtD3BRKsw2JhGxicPb1pRUhecFcxa" class="btn" target="_blank" rel="noopener">YouTube Playlist ↗</a>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="page-nav">
+      <span></span>
+      <a href="#" class="text-link">Back to top ↑</a>
+      <a href="design.html" class="text-link">Next: Design →</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 Evie Melhuish</span>
+    <span><a href="index.html" class="text-link">Back to top</a></span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

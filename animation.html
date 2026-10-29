@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animation — Evie Melhuish</title>
+<meta name="description" content="Animation projects by Evie Melhuish: Sky Kid, Motion Practice, Character Performance, Narrative Conflict.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="nav-name">Evie Melhuish<span class="dot">.</span><span class="nickname-badge">aka BIRE</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-dropdown">
+        <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" aria-current="page">Projects <span class="caret" aria-hidden="true">▾</span></button>
+        <ul class="dropdown">
+          <li><a href="games.html">Games</a></li>
+          <li><a href="design.html">Design</a></li>
+          <li><a href="animation.html" aria-current="page">Animation</a></li>
+        </ul>
+      </li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="timeline.html">Timeline</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="container" style="padding-top: clamp(28px,4vw,44px);">
+    <p class="eyebrow">Projects</p>
+    <h1 style="font-size:clamp(1.8rem,3.4vw,2.4rem);">Animation</h1>
+    <p class="muted" style="max-width:60ch;">3D character work and animation, from concept through rig to final render.</p>
+    <p class="list-label">Jump to a project</p>
+    <ul class="project-list" aria-label="Projects in Animation">
+      <li><a href="#sky-kid"><span class="n">01</span><span class="t">Sky Kid</span><span class="go" aria-hidden="true">↓</span></a></li>
+      <li><a href="#motion-practice"><span class="n">02</span><span class="t">Motion Practice</span><span class="go" aria-hidden="true">↓</span></a></li>
+      <li><a href="#character-performance"><span class="n">03</span><span class="t">Character Performance</span><span class="go" aria-hidden="true">↓</span></a></li>
+      <li><a href="#narrative-conflict"><span class="n">04</span><span class="t">Narrative Conflict</span><span class="go" aria-hidden="true">↓</span></a></li>
+    </ul>
+  </section>
+
+  <!-- ################################################################
+       ANIMATION PROJECTS
+       To add a project: copy a <section class="project-block"> below, change its id,
+       and add a matching link in the pill list at the top of this page.
+       ################################################################ -->
+
+  <!-- =====================================================================
+       SKY KID
+       ===================================================================== -->
+  <section id="sky-kid" class="project-block container">
+    <p class="eyebrow">01 — 3D Art · Rigging · Animation</p>
+    <h2>Sky Kid</h2>
+    <div class="project-meta">
+      <span>Role: Modeling, Rigging, Animation, Integration</span>
+      <span>Tools: Blender, Unreal Engine</span>
+      <span>Motion Design &amp; Game Development Course</span>
+    </div>
+    <p class="muted" style="max-width:70ch;">
+      Inspired by <em>Sky: Children of the Light</em>, a fully modeled, rigged, and animated character taken from concept sketch to playable game asset. Bone structure and animation cycles (Bow, Light Wave, Run/Jump/Idle) were rendered from multiple angles, converted to 2D sprite sheets, and imported into Unreal as a 2.5D playable character — 3D fidelity with 2D performance.
+    </p>
+
+    <div class="still-grid" style="margin-top:16px;">
+      <figure>
+        <img src="assets/img/skykid-01-concept.jpg" alt="Sky Kid character concept art with front, back, and wing views" loading="lazy">
+        <figcaption>01 — Concept</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/skykid-05-turnaround.jpg" alt="Sky Kid character turnaround sheet with cape" loading="lazy">
+        <figcaption>02 — Turnaround</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/skykid-02-wireframe.jpg" alt="Sky Kid 3D wireframe model in Blender" loading="lazy">
+        <figcaption>03 — Model</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/skykid-03-rig.jpg" alt="Sky Kid rigged character mid-animation pose in Blender" loading="lazy">
+        <figcaption>04 — Rig &amp; Animate</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/skykid-06-run.jpg" alt="Sky Kid run cycle render" loading="lazy">
+        <figcaption>05 — Run Cycle</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/skykid-04-gameplay.jpg" alt="Sky Kid playable 2.5D level in Unreal Engine" loading="lazy">
+        <figcaption>06 — In-Engine</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       MOTION PRACTICE
+       ===================================================================== -->
+  <section id="motion-practice" class="project-block container">
+    <p class="eyebrow">02 — Animation · Blender</p>
+    <h2>Motion Practice</h2>
+    <div class="project-meta">
+      <span>Role: Animator</span>
+      <span>Tools: Blender</span>
+      <span>Course: ANFX211 Character Animation I</span>
+      <span>Year: 2026</span>
+    </div>
+    <!-- TODO: confirm the description. -->
+    <p class="muted" style="max-width:70ch;">
+      Three linked shots, each starring a different character who interacts with an object. The object arrives from the edge of the frame, is used or transformed by the character, then leaves the frame to enter the next shot. With the cameras locked off, everything has to come through the animation itself: timing, weight and the principles of animation. The shots were assembled into one sequence with sound.
+    </p>
+
+    <div class="frame" style="margin-top:16px;">
+      <span class="fr fr-tl"></span><span class="fr fr-tr"></span>
+      <span class="fr fr-bl"></span><span class="fr fr-br"></span>
+      <span class="frame-label">Watch</span>
+      <div class="embed-wrap">
+        <!-- YouTube. Change the video ID in the iframe below to swap videos. -->
+        <iframe src="https://www.youtube.com/embed/dM31pDmcYRg" title="Motion Practice" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <!-- IMAGES: add files to assets/img/ and uncomment this block.
+    <div class="still-grid">
+      <figure>
+        <img src="assets/img/motion-practice-01.jpg" alt="Motion Practice — image 1" loading="lazy">
+        <figcaption>Caption</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/motion-practice-02.jpg" alt="Motion Practice — image 2" loading="lazy">
+        <figcaption>Caption</figcaption>
+      </figure>
+    </div>
+    -->
+  </section>
+
+  <!-- =====================================================================
+       CHARACTER PERFORMANCE
+       ===================================================================== -->
+  <section id="character-performance" class="project-block container">
+    <p class="eyebrow">03 — Animation · Blender</p>
+    <h2>Character Performance</h2>
+    <div class="project-meta">
+      <span>Role: Animator</span>
+      <span>Tools: Blender</span>
+      <span>Course: ANFX211 Character Animation I</span>
+      <span>Year: 2026</span>
+    </div>
+    <!-- TODO: confirm the description. -->
+    <p class="muted" style="max-width:70ch;">
+      A short spoken performance by a character in a single mid shot, with the focus on expression. I worked from filmed reference of myself and draw-overs of the key poses and mouth shapes, then blocked the performance, splined it and added lip sync, lighting and an environment. The aim was a believable delivery through facial animation and body language.
+    </p>
+
+    <div class="frame" style="margin-top:16px;">
+      <span class="fr fr-tl"></span><span class="fr fr-tr"></span>
+      <span class="fr fr-bl"></span><span class="fr fr-br"></span>
+      <span class="frame-label">Watch</span>
+      <div class="embed-wrap">
+        <!-- YouTube. Change the video ID in the iframe below to swap videos. -->
+        <iframe src="https://www.youtube.com/embed/cA6AaVz0COw" title="Character Performance" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="frame" style="margin-top:20px;">
+      <span class="fr fr-tl"></span><span class="fr fr-tr"></span>
+      <span class="fr fr-bl"></span><span class="fr fr-br"></span>
+      <span class="frame-label">Draw-over</span>
+      <div class="embed-wrap">
+        <!-- YouTube. Change the video ID to swap. -->
+        <iframe src="https://www.youtube.com/embed/itR-kiinNmY" title="Character Performance — draw-over" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <!-- IMAGES: add files to assets/img/ and uncomment this block.
+    <div class="still-grid">
+      <figure>
+        <img src="assets/img/character-performance-01.jpg" alt="Character Performance — image 1" loading="lazy">
+        <figcaption>Caption</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/character-performance-02.jpg" alt="Character Performance — image 2" loading="lazy">
+        <figcaption>Caption</figcaption>
+      </figure>
+    </div>
+    -->
+  </section>
+
+  <!-- =====================================================================
+       NARRATIVE CONFLICT
+       ===================================================================== -->
+  <section id="narrative-conflict" class="project-block container">
+    <p class="eyebrow">04 — Animation · Blender</p>
+    <h2>Narrative Conflict</h2>
+    <div class="project-meta">
+      <span>Role: Animation, Lighting, Environment</span>
+      <span>Tools: Blender</span>
+      <span>Course: ANFX211 Character Animation I</span>
+      <span>Year: 2026</span>
+    </div>
+    <!-- TODO: confirm the story summary (Einar and the robot?). -->
+    <p class="muted" style="max-width:70ch;">
+      A short narrative about two characters in conflict, following the full dramatic arc from set-up through conflict and climax to resolution. It plays out in a snowbound hideout, with the cold snowscape outside contrasting the interior where the tension builds. I developed the environment, lighting and camera shots as well as the animation, and the storyboard shows how the sequence was planned.
+    </p>
+
+    <div class="frame" style="margin-top:16px;">
+      <span class="fr fr-tl"></span><span class="fr fr-tr"></span>
+      <span class="fr fr-bl"></span><span class="fr fr-br"></span>
+      <span class="frame-label">Watch</span>
+      <div class="embed-wrap">
+        <!-- YouTube. Change the video ID in the iframe below to swap videos. -->
+        <iframe src="https://www.youtube.com/embed/48AswWVAC08" title="Narrative Conflict" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="frame" style="margin-top:20px;">
+      <span class="fr fr-tl"></span><span class="fr fr-tr"></span>
+      <span class="fr fr-bl"></span><span class="fr fr-br"></span>
+      <span class="frame-label">Storyboard</span>
+      <div class="embed-wrap">
+        <!-- YouTube. Change the video ID to swap. -->
+        <iframe src="https://www.youtube.com/embed/rc3ydKoxX7c" title="Narrative Conflict — storyboard" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <!-- IMAGES: add files to assets/img/ and uncomment this block.
+    <div class="still-grid">
+      <figure>
+        <img src="assets/img/narrative-conflict-01.jpg" alt="Narrative Conflict — image 1" loading="lazy">
+        <figcaption>Caption</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/narrative-conflict-02.jpg" alt="Narrative Conflict — image 2" loading="lazy">
+        <figcaption>Caption</figcaption>
+      </figure>
+    </div>
+    -->
+  </section>
+
+  <div class="container">
+    <div class="page-nav">
+      <a href="design.html" class="text-link">← Design</a>
+      <a href="#" class="text-link">Back to top ↑</a>
+      <span></span>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 Evie Melhuish</span>
+    <span><a href="index.html" class="text-link">Back to top</a></span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
