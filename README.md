@@ -6,7 +6,10 @@ Plain HTML/CSS/JS, no build step. Ready to push straight to your `username.githu
 
 ```
 index.html       Home page
-projects.html    Project sections + top jump links + playable embeds
+projects.html    Projects hub (links to the three pages below)
+games.html       Games projects + playable embeds
+design.html      Design projects
+animation.html   Animation projects
 cv.html          CV / resume
 timeline.html    Chronological timeline
 contact.html     Contact links
@@ -27,11 +30,11 @@ assets/cv/       Your CV PDF (linked from cv.html)
 ## What to edit first
 
 - **Fonts are loaded from Google Fonts via CDN** (Space Grotesk / Inter / Space Mono) — no local font files needed.
-- **Every page's `<nav>`** repeats the same markup (plain HTML, no templating). If you rename a page or add one, update the nav block in **all five** HTML files.
+- **Every page's `<nav>`** repeats the same markup (plain HTML, no templating). If you rename a page or add one, update the nav block in **all eight** HTML files.
 - **`index.html`** — swap the bio text, role tags, and portrait placeholder (`assets/img/portrait.jpg`).
-- **`projects.html`** — three sections (Games, Design, Animation), each with its own project blocks. See `ASSETS.md` for the exact image filenames, and search the file for `EMBED:` (paste-in embed snippets) and `TODO:` (text to confirm):
+- **`projects.html`** — a hub page; the projects themselves live in `games.html`, `design.html` and `animation.html`, each with its own project blocks. See `ASSETS.md` for the exact image filenames, and search the HTML files for `EMBED:` (paste-in embed snippets) and `TODO:` (text to confirm):
   - Duplicate a `<section class="project-block">` for each game/piece.
-  - Add a matching link in the project index at the top of the page (`href="#your-section-id"`). The sticky bar only links to the three sections.
+  - Add a matching link in the pill list at the top of that page (`href="#your-section-id"`).
   - For **playable** games: replace the `.embed-placeholder` div with an `<iframe>`. Two options:
     - **itch.io embed** (easiest): upload your WebGL/HTML5 build to itch.io, turn on "embed in page," and use the embed `<iframe>` snippet itch.io gives you.
     - **Self-hosted**: drop your build's exported files into `assets/games/your-project/` and point the iframe `src` at `assets/games/your-project/index.html`.
