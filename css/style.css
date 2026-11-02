@@ -3,15 +3,15 @@
    Palette: cool off-white ground, near-black ink, one indigo "select" accent
    (a nod to editor/engine selection-outline blue, kept sparing).
    Type: Space Grotesk (display, technical/geometric) + Inter (body) +
-   Space Mono (utility — dates, labels, coordinates).
-   Signature element: the "frame" — four corner brackets, like a viewport /
+   Space Mono (utility - dates, labels, coordinates).
+   Signature element: the "frame" - four corner brackets, like a viewport /
    camera gate / selection reticle. Used to mark anything the visitor should
    treat as a "screen": the hero portrait, project embeds, CV blocks.
    ========================================================================== */
 
 :root {
   /* Palette pulled from Evie's reference swatches: warm lamplight yellow and
-     amber sitting above a run of cool teals into near-black navy — reads like
+     amber sitting above a run of cool teals into near-black navy - reads like
      a flashlight beam in the dark, which suits a horror/VR-leaning games
      portfolio without tipping the whole site into "dark mode". */
   --bg: #FAF8F2;
@@ -36,7 +36,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  /* Intentionally not auto-switching — a single considered light theme
+  /* Intentionally not auto-switching - a single considered light theme
      is part of the "clean minimal" brief. Left as a hook if you want
      to add a dark mode later. */
 }
@@ -195,7 +195,7 @@ p { margin: 0 0 1em; color: var(--ink); }
 }
 
 /* ---------------------------------------------------------------------- */
-/* SIGNATURE ELEMENT — THE FRAME (viewport / camera gate / reticle)        */
+/* SIGNATURE ELEMENT - THE FRAME (viewport / camera gate / reticle)        */
 /* ---------------------------------------------------------------------- */
 
 .frame {
@@ -216,7 +216,7 @@ p { margin: 0 0 1em; color: var(--ink); }
 .fr-bl { bottom: -2px; left: -2px; border-right: none; border-top: none; }
 .fr-br { bottom: -2px; right: -2px; border-left: none; border-top: none; }
 
-/* Rivet dots — a small circle sitting right on each corner, the frame's
+/* Rivet dots - a small circle sitting right on each corner, the frame's
    one deliberate square/circle mashup rather than pure right angles. */
 .fr::after {
   content: '';
@@ -480,7 +480,7 @@ p { margin: 0 0 1em; color: var(--ink); }
   flex-wrap: wrap;
 }
 
-/* Secondary stills — deliberately plain (hairline border only, no corner
+/* Secondary stills - deliberately plain (hairline border only, no corner
    brackets) so the .frame motif stays reserved for the one hero shot per
    project rather than being diluted across every thumbnail. */
 .still-grid {
@@ -516,7 +516,7 @@ p { margin: 0 0 1em; color: var(--ink); }
 }
 .sprite-strip img { width: 100%; height: auto; display: block; }
 
-/* Circular gallery — a deliberate break from the frame's right angles,
+/* Circular gallery - a deliberate break from the frame's right angles,
    used on the homepage to pull in shots from across every project. */
 .circle-gallery {
   display: flex;
@@ -584,45 +584,10 @@ p { margin: 0 0 1em; color: var(--ink); }
   padding: 5px 12px;
 }
 
-/* ---------------------------------------------------------------------- */
-/* TIMELINE PAGE (a real sequence — numbering earns its place here)        */
-/* ---------------------------------------------------------------------- */
 
-.timeline {
-  position: relative;
-  margin-left: 6px;
-  padding-left: 34px;
-  border-left: 2px solid var(--border);
-}
 
-.timeline-item {
-  position: relative;
-  padding-bottom: clamp(36px, 5vw, 56px);
-}
-.timeline-item:last-child { padding-bottom: 0; }
 
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -43px;
-  top: 2px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--bg);
-  border: 3px solid var(--accent);
-}
-.timeline-item:nth-child(2n)::before {
-  border-color: var(--accent-warm);
-}
 
-.timeline-year {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--accent);
-  margin-bottom: 4px;
-  display: block;
-}
 
 /* ---------------------------------------------------------------------- */
 /* CONTACT PAGE                                                            */
@@ -666,7 +631,7 @@ p { margin: 0 0 1em; color: var(--ink); }
 }
 
 /* ---------------------------------------------------------------------- */
-/* ADDITIONS — category sections, embeds, project index                    */
+/* ADDITIONS - category sections, embeds, project index                    */
 /* ---------------------------------------------------------------------- */
 
 img { background: var(--bg-alt); }
@@ -808,7 +773,7 @@ img { background: var(--bg-alt); }
 .play-gate-cta small { color: var(--ink-muted); text-transform: none; margin-left: 4px; }
 
 /* ====================================================================== */
-/* NEW LOOK — palette from the loket.design reference, bold display type    */
+/* NEW LOOK - palette from the loket.design reference, bold display type    */
 /* ====================================================================== */
 :root {
   --bg: #EBE9E1;
@@ -851,7 +816,7 @@ h2 { font-size: clamp(1.9rem, 4.2vw, 3rem); line-height: 1; }
 .nav-links .dropdown a:hover, .nav-links .dropdown a[aria-current="page"] { background: var(--pink); color: var(--ink); }
 .nav-toggle { border: 2px solid var(--ink); font-weight: 700; }
 
-/* the signature frame — bigger corners and rivets */
+/* the signature frame - bigger corners and rivets */
 .frame { border: 2px solid var(--border-strong); }
 .fr { width: 44px; height: 44px; border-width: 5px; }
 .fr::after { width: 18px; height: 18px; background: var(--accent-warm); border: 2px solid var(--ink); }
@@ -903,12 +868,7 @@ h2 { font-size: clamp(1.9rem, 4.2vw, 3rem); line-height: 1; }
 .card--orange h3, .card--pink h3, .card--yellow h3 { font-size: 1.7rem; line-height: 1; margin: 10px 0 12px; }
 .card--orange:hover { box-shadow: 6px 6px 0 var(--ink); }
 
-/* timeline + cv */
-.timeline { border-left: 3px solid var(--ink); }
-.timeline-item::before { width: 22px; height: 22px; left: -47px; top: 0; border: 4px solid var(--ink); background: var(--accent); }
-.timeline-item:nth-child(3n+2)::before { background: var(--pink); border-color: var(--ink); }
-.timeline-item:nth-child(3n)::before { background: var(--accent-warm); border-color: var(--ink); }
-.timeline-year { color: var(--accent-text); font-weight: 700; font-size: 0.9rem; }
+/* cv */
 .cv-row { border-top: 2px solid var(--ink); }
 .cv-row:last-child { border-bottom: 2px solid var(--ink); }
 .cv-date { color: var(--accent-text); font-weight: 700; }
@@ -1006,3 +966,20 @@ body.lb-open { overflow: hidden; }
   .lb-prev { left: calc(50% - 66px); }
   .lb-next { right: calc(50% - 66px); }
 }
+
+/* ---- round 2 fixes ---- */
+*::before, *::after { box-sizing: border-box; }   /* keeps dots centred on their lines */
+.fr::after { display: none; }                      /* corner brackets only, no rivets */
+.marquee + .section { border-top: 0; }             /* no divider line under the banner */
+.marquee + .section::before { display: none; }
+
+/* hero shapes are sized and placed from the title size so they sit inside the design */
+.hero { --F: min(14vw, 12.5rem); }
+.hero-burst { width: calc(var(--F) * 1.7); height: calc(var(--F) * 1.7); left: calc(var(--gutter) + var(--F) * 2.85); top: calc(clamp(36px, 6vw, 72px) + 1.9rem + var(--F) * 0.09); }
+.hero-circle { width: calc(var(--F) * 0.55); left: calc(var(--gutter) + var(--F) * 3.95); top: calc(clamp(36px, 6vw, 72px) + 1.9rem + var(--F) * 1.12); }
+.hero-half { width: calc(var(--F) * 0.9); left: calc(var(--gutter) + var(--F) * 1.0); top: calc(clamp(36px, 6vw, 72px) + 1.9rem + var(--F) * 1.31); }
+
+/* footer headline links to Contact */
+.footer-big { color: var(--ink); }
+.footer-big a { color: inherit; text-decoration: none; }
+.footer-big a:hover, .footer-big a:focus-visible { color: var(--cream); text-decoration: underline; text-decoration-thickness: 0.05em; text-underline-offset: 0.08em; }

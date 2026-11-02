@@ -3,16 +3,17 @@
 Images live in `assets/img/`. Easiest route: run `prepare-images.sh` (macOS) from the folder that holds your originals. It resizes them for the web, renames them to the names below, and puts them in `site-images/`. Then copy that folder's contents into `assets/img/`.
 
 Also needed:
-- `portrait.jpg` — home page headshot (4:5 works best)
+- `portrait.jpg`, home page headshot (4:5 works best)
 - Sky Kid images already exist from your old site, and the script re-exports them from your folder too.
 
 ## Embeds
 Done: YouTube (Darker, RetroChicken, What Waits in the Cave, the three animations and their process videos), the Soma PDFs (already in `assets/docs/`), and the Tabletop Google Slides.
 Two games are self-hosted, so you add their files:
-- Bubble Boundaries — unzip `BB3.zip` into `assets/games/bubble-boundaries/` (so `index.html` is directly inside it)
-- Did You Hear That — put the Twine export at `assets/games/did-you-hear-that/index.html` (rename `Did You Hear That_.html`)
+- Bubble Boundaries, unzip `BB3.zip` into `assets/games/bubble-boundaries/` (so `index.html` is directly inside it)
+- Did You Hear That, put the Twine export at `assets/games/did-you-hear-that/index.html` (rename `Did You Hear That_.html`)
 
 ## Image names used by the site
+- `bubble-boundaries-01.jpg`  ← `BB-1`
 - `kings-messenger-01-main.jpg`  ← `KingsM-main`
 - `kings-messenger-02-gameplay1.jpg`  ← `KingsM-Gameplay1`
 - `kings-messenger-03-gameplay2.jpg`  ← `KingsM-gameplay2`
@@ -39,7 +40,6 @@ Two games are self-hosted, so you add their files:
 - `darker-03-notebook.jpg`  ← `Darker-Notebook`
 - `darker-04-ending.jpg`  ← `Darker-EndExample1`
 - `darker-05-credits.jpg`  ← `Darker-Credits`
-- `bubble-boundaries-01.jpg`  ← `BB-1`
 - `bubble-boundaries-02.jpg`  ← `BB-2`
 - `bubble-boundaries-03.jpg`  ← `BB-3`
 - `bubble-boundaries-04.jpg`  ← `BB-4`
